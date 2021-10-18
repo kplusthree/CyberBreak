@@ -41,6 +41,7 @@ public class Boss1MovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*                                                      temp comment to test new input system
         if (Input.GetKeyDown("space") && attack == false)
         {
             //StartCoroutine(SmallAttack());
@@ -48,6 +49,7 @@ public class Boss1MovementScript : MonoBehaviour
             //StartCoroutine(FullAttack(degreeFacing));
             StartCoroutine(BigAttack(degreeFacing));
         }
+        */
 
         // player location
         target = playerObj.transform;
