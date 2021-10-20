@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class Boss1MovementScript : MonoBehaviour
 {
@@ -29,6 +31,27 @@ public class Boss1MovementScript : MonoBehaviour
     //[HideInInspector]
     //public AudioSource bulletSource;
 
+
+    // for test firing
+    private TempBossControls bossControls;
+    private PlayerInput playerInput;
+
+    void Awake()
+    {
+        bossControls = new TempBossControls();
+        playerInput = GetComponent<PlayerInput>();
+    }
+
+    private void OnEnable()
+    {
+        bossControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        bossControls.Disable();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,15 +64,15 @@ public class Boss1MovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*                                                      temp comment to test new input system
-        if (Input.GetKeyDown("space") && attack == false)
+                                                           //temp comment to test new input system
+        if (bossControls.BossControl.TestFire.ReadValue<float>() == 1 && attack == false)
         {
             //StartCoroutine(SmallAttack());
             //StartCoroutine(SemiCircleAttack(degreeFacing));
             //StartCoroutine(FullAttack(degreeFacing));
             StartCoroutine(BigAttack(degreeFacing));
         }
-        */
+        
 
         // player location
         target = playerObj.transform;
