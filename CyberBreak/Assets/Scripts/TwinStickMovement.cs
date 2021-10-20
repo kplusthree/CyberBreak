@@ -16,6 +16,7 @@ public class TwinStickMovement : MonoBehaviour
 
     private bool isGamepad;
     private bool attack = false;
+    public bool pause = false;
 
     private CharacterController controller;
     public GameObject bulletPrefab;
@@ -51,6 +52,7 @@ public class TwinStickMovement : MonoBehaviour
         HandleInput();
         HandleMovement();
         HandleRotation();
+        HandlePause();
     }
 
     void HandleInput()
@@ -120,7 +122,7 @@ public class TwinStickMovement : MonoBehaviour
         transform.LookAt(heightCorrectedPoint);
     }
 
-    public void OnDeviceCahnge (PlayerInput playerInput)
+    public void OnDeviceCahnge(PlayerInput playerInput)
     {
         isGamepad = playerInput.currentControlScheme.Equals("Gamepad") ? true : false;
     }
@@ -132,8 +134,12 @@ public class TwinStickMovement : MonoBehaviour
         Destroy(bullet);
     }
 
-    public void OnPause(InputAction.CallbackContext context)
+    void HandlePause()
     {
-        SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
+        if (pause == false)
+        {
+            pause = true;
+            playerControls.Controls.Pause.performed += ctx => SceneManager.LoadScene("PauseMenu");
+        }
     }
 }
