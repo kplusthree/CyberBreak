@@ -50,8 +50,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 5
+  shootRate: 0.5
   controllerDeadzone: 0.1
   rotateSmoothing: 1000
+  bulletPrefab: {fileID: 1213496270602871075, guid: c6935622ddae08146baf9f83f9d4c0cf, type: 3}
 --- !u!33 &3317718776486555313
 MeshFilter:
   m_ObjectHideFlags: 0

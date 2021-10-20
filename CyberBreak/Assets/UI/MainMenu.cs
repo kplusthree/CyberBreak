@@ -19,6 +19,10 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Quit!");
+    }
 
+    public void ReturnGame()
+    {
+        SceneManager.UnloadSceneAsync("PauseMenu");
     }
 }

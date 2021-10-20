@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6927247648823768724}
   - component: {fileID: -6950821646705030853}
   - component: {fileID: 5949282959710629849}
+  - component: {fileID: -5757557641501657085}
+  - component: {fileID: -631486715084598056}
   m_Layer: 0
   m_Name: Boss1
   m_TagString: Untagged
@@ -131,3 +133,29 @@ MonoBehaviour:
   m_DefaultActionMap: BossControl
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &-5757557641501657085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6134011455292071992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8db7236ba5afc64887071df67b261a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
+--- !u!65 &-631486715084598056
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6134011455292071992}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.16, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}

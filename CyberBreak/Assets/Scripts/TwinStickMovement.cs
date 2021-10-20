@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(PlayerInput))]
@@ -9,12 +10,16 @@ using UnityEngine.InputSystem;
 public class TwinStickMovement : MonoBehaviour
 {
     public float playerSpeed = 5f;
+    public float shootRate = 0.5f;
     public float controllerDeadzone = 0.1f;
     public float rotateSmoothing = 1000f;
 
     private bool isGamepad;
+    private bool attack = false;
 
     private CharacterController controller;
+    public GameObject bulletPrefab;
+    private static Rigidbody bulletRB;
 
     private Vector2 movement;
     private Vector2 aim;
@@ -71,6 +76,12 @@ public class TwinStickMovement : MonoBehaviour
                 {
                     Quaternion newrotation = Quaternion.LookRotation(playerDirection, Vector3.up);
                     transform.rotation = Quaternion.RotateTowards(transform.rotation, newrotation, rotateSmoothing * Time.deltaTime);
+                    // shoots when direction is turned
+                    if (attack == false)
+                    {
+                        // launch the bullets from the player
+                        StartCoroutine(Launch());
+                    }
                 }
             }
         }
@@ -88,6 +99,21 @@ public class TwinStickMovement : MonoBehaviour
         }
     }
 
+    // Fires Bullet
+    IEnumerator Launch()
+    {
+        attack = true;
+        GameObject BossBullet = Instantiate(bulletPrefab, transform.position + transform.forward * 2, transform.rotation);
+        //bulletSource.clip = bulletClip;
+        //bulletSource.Play();
+        bulletRB = BossBullet.GetComponent<Projectile>().GetComponent<Rigidbody>();
+        bulletRB.AddForce(transform.forward * 10, ForceMode.Impulse);
+        yield return new WaitForSeconds(shootRate);
+        attack = false;
+
+        StartCoroutine(Destruction(BossBullet));
+    }
+
     private void LookAt(Vector3 lookPoint)
     {
         Vector3 heightCorrectedPoint = new Vector3(lookPoint.x, transform.position.y, lookPoint.z);
@@ -97,5 +123,17 @@ public class TwinStickMovement : MonoBehaviour
     public void OnDeviceCahnge (PlayerInput playerInput)
     {
         isGamepad = playerInput.currentControlScheme.Equals("Gamepad") ? true : false;
+    }
+
+    IEnumerator Destruction(GameObject bullet)
+    {
+        yield return new WaitForSeconds(2);
+
+        Destroy(bullet);
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
     }
 }

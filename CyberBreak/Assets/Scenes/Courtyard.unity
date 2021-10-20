@@ -433,6 +433,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4842504514386560720, guid: 985738273006123479d015477bdd172a, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829842696614394869, guid: 985738273006123479d015477bdd172a, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 4611249451867358970, guid: 83a617f86d92472439ccd4baebcc30c3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 985738273006123479d015477bdd172a, type: 3}
 --- !u!1001 &121100447
@@ -4233,6 +4241,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -631486715084598056, guid: 73e76527d51a1ef448fee3d8fc3d99a2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6134011455292071992, guid: 73e76527d51a1ef448fee3d8fc3d99a2, type: 3}
       propertyPath: m_Name
       value: Boss1
