@@ -436,18 +436,18 @@ PrefabInstance:
     - target: {fileID: -3150680097588468283, guid: 985738273006123479d015477bdd172a, type: 3}
       propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11500000, guid: c21b9f4c0ba8cef49b358437aca910ac, type: 3}
+      objectReference: {fileID: 1698188426}
     - target: {fileID: -3150680097588468283, guid: 985738273006123479d015477bdd172a, type: 3}
       propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: TwinStickMovement, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: -3150680097588468283, guid: 985738273006123479d015477bdd172a, type: 3}
       propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: set_name
+      value: OnDeviceCahnge
       objectReference: {fileID: 0}
     - target: {fileID: -3150680097588468283, guid: 985738273006123479d015477bdd172a, type: 3}
       propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3150680097588468283, guid: 985738273006123479d015477bdd172a, type: 3}
       propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -3997,6 +3997,17 @@ Transform:
   m_Father: {fileID: 657982653}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1698188426 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5829842696614394869, guid: 985738273006123479d015477bdd172a, type: 3}
+  m_PrefabInstance: {fileID: 101008737}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21b9f4c0ba8cef49b358437aca910ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1713039637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4313,6 +4324,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5949282959710629849, guid: 73e76527d51a1ef448fee3d8fc3d99a2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6134011455292071992, guid: 73e76527d51a1ef448fee3d8fc3d99a2, type: 3}
       propertyPath: m_Name
       value: Boss1
@@ -4361,7 +4376,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5949282959710629849, guid: 73e76527d51a1ef448fee3d8fc3d99a2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 73e76527d51a1ef448fee3d8fc3d99a2, type: 3}
 --- !u!1001 &1771271504
 PrefabInstance:
