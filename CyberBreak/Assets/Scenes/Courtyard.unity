@@ -1039,6 +1039,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7590946662871595478, guid: 04e3039b701424f45aadbc2cb714409f, type: 3}
   m_PrefabInstance: {fileID: 204790764}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &230936972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8581597477475236415, guid: 04e3039b701424f45aadbc2cb714409f, type: 3}
+  m_PrefabInstance: {fileID: 1926321884}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &230936973
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230936972}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6.6356153, z: 29.987713}
+  m_Center: {x: 1.0906553e-12, y: 0.34455824, z: -11.199188}
 --- !u!1001 &304484468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1805,6 +1823,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444661967}
   m_CullTransparentMesh: 0
+--- !u!1 &468721082 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8581597477475236415, guid: 04e3039b701424f45aadbc2cb714409f, type: 3}
+  m_PrefabInstance: {fileID: 154536333}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &468721083
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468721082}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.131731, y: 6.1024513, z: 27.56749}
+  m_Center: {x: 0.56586564, y: 0.29113674, z: -13.283748}
 --- !u!1001 &480738029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1867,6 +1903,42 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7590946662871595478, guid: 04e3039b701424f45aadbc2cb714409f, type: 3}
   m_PrefabInstance: {fileID: 480738029}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &497499138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7146692483706679454, guid: 851be50784cfb524dacf3b699a8b6adc, type: 3}
+  m_PrefabInstance: {fileID: 40190643}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &497499139
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497499138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 21.377188, y: 3.361946, z: 0.80616426}
+  m_Center: {x: -5.7435174, y: 13.819077, z: -23.9031}
+--- !u!1 &553413989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8581597477475236415, guid: 04e3039b701424f45aadbc2cb714409f, type: 3}
+  m_PrefabInstance: {fileID: 6748689564674014585}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &553413990
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553413989}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6092739, y: 5.397373, z: 18.646782}
+  m_Center: {x: -0.19536304, y: -0.10373402, z: 5.6912994}
 --- !u!1001 &604428085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2244,6 +2316,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ba70ce5c62a58740821a7381dc49ff4, type: 3}
+--- !u!1 &747417452 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8581597477475236415, guid: 04e3039b701424f45aadbc2cb714409f, type: 3}
+  m_PrefabInstance: {fileID: 1731183832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &747417453
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747417452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 5.546093, z: 26.300272}
+  m_Center: {x: 0, y: -0.06904411, z: -12.650136}
 --- !u!1001 &760621239
 PrefabInstance:
   m_ObjectHideFlags: 0
