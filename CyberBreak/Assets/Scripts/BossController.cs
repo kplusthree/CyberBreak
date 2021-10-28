@@ -5,18 +5,22 @@ using UnityEngine;
 public class BossController : MonoBehaviour
 {
     public int health;
+    [HideInInspector]
+    public bool gameWin;
 
     // Start is called before the first frame update
     void Start()
     {
-        health = 20;
+        health = 100;
+        gameWin = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (health == 0)
+        if (health <= 0)
         {
+            gameWin = true;
             Destroy(gameObject);
         }
     }
@@ -25,7 +29,7 @@ public class BossController : MonoBehaviour
     {
         if (collision.gameObject.tag == "PlayerBullet")
         {
-            health = health - 2;
+            health = health - 5;
             Destroy(collision.gameObject);
         }
     }

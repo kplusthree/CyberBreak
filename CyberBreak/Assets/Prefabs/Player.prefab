@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4216834390411183023}
+  - component: {fileID: -4529285139574909775}
   - component: {fileID: 5829842696614394869}
   - component: {fileID: 3317718776486555313}
   - component: {fileID: 2498852822498532326}
@@ -17,7 +18,7 @@ GameObject:
   - component: {fileID: -3150680097588468283}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,6 +38,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4529285139574909775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4842504514386560720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4012fe0d263f7e4b8f6cb4da2ebd631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
 --- !u!114 &5829842696614394869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53,7 +67,8 @@ MonoBehaviour:
   shootRate: 0.5
   controllerDeadzone: 0.1
   rotateSmoothing: 1000
-  bulletPrefab: {fileID: 1213496270602871075, guid: c6935622ddae08146baf9f83f9d4c0cf, type: 3}
+  pause: 0
+  bulletPrefab: {fileID: 4611249451867358970, guid: 957321e24e8757949bcb83b2f898b2a5, type: 3}
 --- !u!33 &3317718776486555313
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -168,7 +183,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: TwinStickMovement.OnPause
           m_BoolArgument: 0
         m_CallState: 2
   m_ActionEvents:
@@ -180,8 +195,12 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: fbc23be0-cbe3-41f1-a34b-bbe6f5da9890
     m_ActionName: Controls/Aim[/XInputControllerWindows/rightStick,/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 94a9667a-892c-4e8f-8778-824299a7e05c
+    m_ActionName: Controls/Pause[/XInputControllerWindows/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Controls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

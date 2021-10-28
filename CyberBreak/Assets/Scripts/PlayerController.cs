@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public int health;
+    public int lives;
     [HideInInspector]
-    bool death;
+    public bool gameOver;
 
     // Start is called before the first frame update
     void Start()
     {
-        health = 20;
-        death = false;
+        lives = 3;
+        gameOver = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (health == 0)
+        if (lives <= 0)
         {
-            death = true;
+            gameOver = true;
         }
     }
 
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "BossBullet")
         {
-            health = health - 5;
+            lives = lives - 1;
             Destroy(collision.gameObject);
         }
     }
