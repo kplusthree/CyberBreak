@@ -4,21 +4,27 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(CharacterController))]
+// [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(PlayerInput))]
 
 public class TwinStickMovement : MonoBehaviour
 {
     public float playerSpeed = 5f;
+    public float dashSpeed = 1000f;
+    public float dashDelay = 2f;
+    private float dashTimer;
     public float shootRate = 0.5f;
     public float controllerDeadzone = 0.1f;
     public float rotateSmoothing = 1000f;
 
     private bool isGamepad;
+    bool canDash = false;
     private bool attack = false;
     public bool pause = false;
 
-    private CharacterController controller;
+    // private CharacterController controller;
+    private Rigidbody playerRB;
     public GameObject bulletPrefab;
     private static Rigidbody bulletRB;
 
@@ -32,9 +38,11 @@ public class TwinStickMovement : MonoBehaviour
 
     void Awake()
     {
-        controller = GetComponent<CharacterController>();
+        // controller = GetComponent<CharacterController>();
+        playerRB = GetComponent<Rigidbody>();
         playerControls = new PlayerControls();
         playerInput = GetComponent<PlayerInput>();
+        dashTimer = dashDelay;
     }
 
     private void OnEnable()
@@ -52,6 +60,7 @@ public class TwinStickMovement : MonoBehaviour
         HandleInput();
         HandleMovement();
         HandleRotation();
+        HandleDash();
         HandlePause();
     }
 
@@ -64,7 +73,31 @@ public class TwinStickMovement : MonoBehaviour
     void HandleMovement()
     {
         Vector3 move = new Vector3(movement.x, 0, movement.y);
-        controller.Move(move * Time.deltaTime * playerSpeed);
+        // controller.Move(move * Time.deltaTime * playerSpeed);
+        playerRB.MovePosition(transform.position + move * Time.deltaTime * playerSpeed);
+    }
+
+    void HandleDash()
+    {
+        dashTimer -= Time.deltaTime;
+
+        Vector3 playerDirection = Vector3.right * aim.x + Vector3.forward * aim.y;
+        if (playerDirection.sqrMagnitude > 0.0f)
+        {
+            playerControls.Controls.Dash.performed += ctx => Dash();
+        }
+    }
+
+    void Dash()
+    {
+        Vector3 dashDirection = new Vector3(movement.x, 1, movement.y);
+        // controller.Move(dashDirection * Time.deltaTime * playerSpeed);
+        if (dashTimer <= 0)
+        {
+            playerRB.MovePosition(dashDirection * Time.deltaTime * dashSpeed);
+            dashTimer = dashDelay;
+            Debug.Log("Dashed");
+        }
     }
 
     void HandleRotation()
