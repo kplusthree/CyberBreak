@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
+    [HideInInspector]
     public int health;
     [HideInInspector]
     public bool gameWin;
-    public HealthBarBehavior HealthBar;
-    public int MaxHealth = 20;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        health = MaxHealth;
-        HealthBar.SetHealth(health, MaxHealth);
+        health = 100;
         gameWin = false;
     }
 

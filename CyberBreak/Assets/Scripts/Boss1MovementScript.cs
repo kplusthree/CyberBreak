@@ -11,8 +11,20 @@ public class Boss1MovementScript : MonoBehaviour
     public GameObject bulletPrefab;
     private static Rigidbody bulletRB;
     private Transform target;
+    [HideInInspector]
+    public gameController boss;
 
     public Vector3 middleOfRoom;
+    public Vector3 pointOne;
+    public Vector3 pointTwo;
+    public Vector3 pointThree;
+
+    bool twoThirds;
+    bool oneThird;
+    float speed;
+    float timeBetweenTeleports;
+    float timeBetweenAttacks;
+    int randNum;
 
     [HideInInspector]
     public Quaternion rawDirection;
@@ -21,8 +33,13 @@ public class Boss1MovementScript : MonoBehaviour
     [HideInInspector]
     float degreeFacing;
     [HideInInspector]
-    bool attack;[HideInInspector]
+    bool attack;
+    [HideInInspector]
     bool tempAttack;
+    [HideInInspector]
+    bool tempTeleport;
+    [HideInInspector]
+    bool whichAttack;
 
     [HideInInspector]
     public int quadrant;
@@ -38,19 +55,49 @@ public class Boss1MovementScript : MonoBehaviour
         degreeFacing = 0;
         quadrant = 0;
         attack = false;
+        twoThirds = false;
+        oneThird = false;
+        speed = 1f;
+        timeBetweenTeleports = 7f;
+        timeBetweenAttacks = 3.5f;
+        boss = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<gameController>();
+        randNum = 0;
+        tempTeleport = false;
+        whichAttack = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (attack == false)
+        if (boss.currentBossHealth <= 66 && boss.currentBossHealth > 33)
         {
-            //StartCoroutine(SmallAttack());
-            //StartCoroutine(SemiCircleAttack(degreeFacing));
-            //StartCoroutine(FullAttack(degreeFacing));
+            twoThirds = true;
+        }
+        else if (boss.currentBossHealth <= 33)
+        {
+            twoThirds = false;
+            oneThird = true;
+        }
+
+        if (tempTeleport == true)
+        {
+            StartCoroutine(Teleport());
+        }
+
+        if (attack == false && twoThirds == true)
+        {
+            timeBetweenTeleports = 4f;
             StartCoroutine(BigAttack(degreeFacing));
         }
-        
+        else if (attack == false && oneThird == true)
+        {
+            speed = 0.5f;
+            StartCoroutine(BigAttack(degreeFacing));
+        }
+        else if (attack == false && whichAttack == true)
+        {
+            StartCoroutine(ChooseAttack());
+        }  
 
         // player location
         target = playerObj.transform;
@@ -65,6 +112,72 @@ public class Boss1MovementScript : MonoBehaviour
         rawDirection = transform.rotation;
         direction = rawDirection.eulerAngles;
         degreeFacing = direction.y;
+    }
+
+    // Teleports the boss to one of 3 spots
+    IEnumerator Teleport()
+    {
+        tempTeleport = false;
+
+        // create random number between 1 and 3
+        randNum = Random.Range(1, 3);
+
+        // don't teleport until time has passed
+        yield return new WaitForSeconds(timeBetweenTeleports * speed);
+
+        // teleport to the point generated randomly
+        if (randNum == 1)
+        {
+            transform.position = pointOne;
+        }
+        else if (randNum == 2)
+        {
+            transform.position = pointTwo;
+        }
+        else
+        {
+            transform.position = pointThree;
+        }
+
+        // wait until any attacks have finished
+        yield return new WaitUntil(() => attack == false);
+
+        tempTeleport = true;
+
+        yield return null;
+    }
+
+    // Teleports the boss to one of 3 spots
+    IEnumerator ChooseAttack()
+    {
+        whichAttack = false;
+
+        // create random number between 1 and 3
+        randNum = Random.Range(1, 3);
+
+        // don't teleport until time has passed
+        yield return new WaitForSeconds(timeBetweenAttacks * speed);
+
+        // teleport to the point generated randomly
+        if (randNum == 1)
+        {
+            StartCoroutine(SmallAttack());
+        }
+        else if (randNum == 2)
+        {
+            StartCoroutine(SemiCircleAttack(degreeFacing));
+        }
+        else
+        {
+            StartCoroutine(FullAttack(degreeFacing));
+        }
+
+        // wait until any attacks have finished
+        yield return new WaitUntil(() => attack == false);
+
+        whichAttack = true;
+
+        yield return null;
     }
 
     // Figures out which quadrant the player is currently in
@@ -103,7 +216,7 @@ public class Boss1MovementScript : MonoBehaviour
         for (int i = 0; i < attackTimes; i++)
         {
             Launch();
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.2f * speed);
         }
 
         yield return new WaitForSeconds(1.0f);
@@ -291,10 +404,10 @@ public class Boss1MovementScript : MonoBehaviour
                 GameObject BulletObject = Instantiate(bulletPrefab, transform.position + transform.forward * (layerBuffer * (i + 1)), transform.rotation);
                 transform.Rotate(0f, degreesBetween, 0f, Space.Self);
 
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.1f * speed);
             }
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.1f * speed);
         }
 
         GameObject[] bossBullets = GameObject.FindGameObjectsWithTag("BossBullet");
@@ -307,7 +420,7 @@ public class Boss1MovementScript : MonoBehaviour
 
             if (layers == 1 && fullCirlce == false)
             {
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.2f * speed);
             }
         }
 

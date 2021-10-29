@@ -1,26 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class gameController : MonoBehaviour
 {
     private bool endLevel;
-    public GameOverScreen GameOverScreen;
-    private bool maxPlatform = false;
-
+    [HideInInspector]
     public PlayerController player;
-
     private int currentPlayerLives;
     private int previousLivesAmount;
 
+    [HideInInspector]
     public BossController boss;
-    private int currentBossHealth;
+    [HideInInspector]
+    public int currentBossHealth;
     private int previousHealthAmount;
 
     // Start is called before the first frame update
     void Start()
     {
+        boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossController>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         currentPlayerLives = player.lives;
         previousLivesAmount = currentPlayerLives;
         currentBossHealth = boss.health;
@@ -36,16 +36,12 @@ public class gameController : MonoBehaviour
 
         if (currentBossHealth != previousHealthAmount)
         {
-            Debug.Log(currentBossHealth);                   
-            
-            // Update boss health ui here
+            Debug.Log(currentBossHealth);                   // Update boss health ui here
             previousHealthAmount = currentBossHealth;
         }
-            // player health ui remove lives in player script
         if (currentPlayerLives != previousLivesAmount)
         {
-            Debug.Log(currentPlayerLives);
-
+            Debug.Log(currentPlayerLives);                  // Update player health ui here
             previousLivesAmount = currentPlayerLives;
         }
 
@@ -53,15 +49,12 @@ public class gameController : MonoBehaviour
         {
             if (boss.gameWin == true)
             {
-                Debug.Log("you win!"); 
-                GameOverScreen.Setup(maxPlatform);
-            // Add win state here
+                Debug.Log("you win!");                      // Add win state here
                 endLevel = true;
             }
             else if (player.gameOver == true)
             {
-                Debug.Log("you lose!");
-                GameOverScreen.Setup(maxPlatform);                     //Add lose state here
+                Debug.Log("you lose!");                     //Add loose state here
                 endLevel = true;
             }
         }
