@@ -5,18 +5,22 @@ using UnityEngine;
 public class gameController : MonoBehaviour
 {
     private bool endLevel;
-
+    [HideInInspector]
     public PlayerController player;
     private int currentPlayerLives;
     private int previousLivesAmount;
 
+    [HideInInspector]
     public BossController boss;
-    private int currentBossHealth;
+    [HideInInspector]
+    public int currentBossHealth;
     private int previousHealthAmount;
 
     // Start is called before the first frame update
     void Start()
     {
+        boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossController>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         currentPlayerLives = player.lives;
         previousLivesAmount = currentPlayerLives;
         currentBossHealth = boss.health;

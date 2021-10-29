@@ -94,9 +94,10 @@ GameObject:
   - component: {fileID: 7439018381731492726}
   - component: {fileID: 3965207340773096929}
   - component: {fileID: 8080221791168565562}
+  - component: {fileID: 1182794389331011204}
   m_Layer: 0
-  m_Name: Boss1 1
-  m_TagString: Untagged
+  m_Name: Boss1
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+  gameWin: 0
 --- !u!65 &8080221791168565562
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -193,3 +195,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1182794389331011204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5926268917300618714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2243059d47b9d42a8aa2749ebd6423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 4611249451867358970, guid: 83a617f86d92472439ccd4baebcc30c3, type: 3}
+  boss: {fileID: 0}
+  middleOfRoom: {x: 0, y: 0, z: 0}
+  pointOne: {x: 0, y: 0, z: 0}
+  pointTwo: {x: 0, y: 0, z: 0}
+  pointThree: {x: 0, y: 0, z: 0}
+  rawDirection: {x: 0, y: 0, z: 0, w: 0}
+  direction: {x: 0, y: 0, z: 0}
+  quadrant: 0

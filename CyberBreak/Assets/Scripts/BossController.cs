@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
+    [HideInInspector]
     public int health;
     [HideInInspector]
     public bool gameWin;
