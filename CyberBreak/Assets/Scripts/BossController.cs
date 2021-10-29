@@ -7,11 +7,15 @@ public class BossController : MonoBehaviour
     public int health;
     [HideInInspector]
     public bool gameWin;
+    public HealthBarBehavior HealthBar;
+    public int MaxHitpoints = 20;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        health = 100;
+        health = MaxHitpoints;
+        HealthBar.SetHealth(health, MaxHitpoints);
         gameWin = false;
     }
 

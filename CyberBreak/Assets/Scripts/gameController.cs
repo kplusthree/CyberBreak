@@ -7,6 +7,7 @@ public class gameController : MonoBehaviour
     private bool endLevel;
 
     public PlayerController player;
+
     private int currentPlayerLives;
     private int previousLivesAmount;
 
@@ -32,12 +33,16 @@ public class gameController : MonoBehaviour
 
         if (currentBossHealth != previousHealthAmount)
         {
-            Debug.Log(currentBossHealth);                   // Update boss health ui here
+            Debug.Log(currentBossHealth);                   
+            
+            // Update boss health ui here
             previousHealthAmount = currentBossHealth;
         }
+            // player health ui remove lives in player script
         if (currentPlayerLives != previousLivesAmount)
         {
-            Debug.Log(currentPlayerLives);                  // Update player health ui here
+            Debug.Log(currentPlayerLives);
+
             previousLivesAmount = currentPlayerLives;
         }
 
@@ -50,7 +55,7 @@ public class gameController : MonoBehaviour
             }
             else if (player.gameOver == true)
             {
-                Debug.Log("you lose!");                     //Add loose state here
+                Debug.Log("you lose!");                     //Add lose state here
                 endLevel = true;
             }
         }

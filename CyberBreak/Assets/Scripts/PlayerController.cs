@@ -5,13 +5,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public int lives;
+    public GameObject[] hearts;
     [HideInInspector]
+
     public bool gameOver;
 
     // Start is called before the first frame update
     void Start()
     {
-        lives = 3;
+        lives = hearts.Length;
         gameOver = false;
     }
 
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "BossBullet")
         {
             lives = lives - 1;
+            Destroy(hearts[lives].gameObject);
             Destroy(collision.gameObject);
         }
     }
