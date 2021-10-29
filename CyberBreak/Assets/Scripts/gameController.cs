@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gameController : MonoBehaviour
 {
     private bool endLevel;
+    public GameOverScreen GameOverScreen;
+    private bool maxPlatform = false;
 
     public PlayerController player;
 
@@ -50,12 +53,15 @@ public class gameController : MonoBehaviour
         {
             if (boss.gameWin == true)
             {
-                Debug.Log("you win!");                      // Add win state here
+                Debug.Log("you win!"); 
+                GameOverScreen.Setup(maxPlatform);
+            // Add win state here
                 endLevel = true;
             }
             else if (player.gameOver == true)
             {
-                Debug.Log("you lose!");                     //Add lose state here
+                Debug.Log("you lose!");
+                GameOverScreen.Setup(maxPlatform);                     //Add lose state here
                 endLevel = true;
             }
         }
