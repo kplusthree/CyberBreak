@@ -52,14 +52,14 @@ public class gameController : MonoBehaviour
             {
                 Debug.Log("you win!");                      
                 endLevel = true;
+                SceneManager.LoadScene("GameOver");
             }
             else if (player.gameOver == true)
             {
                 Debug.Log("you lose!");                     
                 endLevel = true;
+                SceneManager.LoadScene("GameOver");
             }
-
-            SceneManager.LoadScene("GameOver");            // added same game over screen for both instances
         }
     }
 }
