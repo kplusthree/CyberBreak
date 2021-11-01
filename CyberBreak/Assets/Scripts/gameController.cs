@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class gameController : MonoBehaviour
 {
@@ -36,12 +37,12 @@ public class gameController : MonoBehaviour
 
         if (currentBossHealth != previousHealthAmount)
         {
-            Debug.Log(currentBossHealth);                   // Update boss health ui here
+            Debug.Log(currentBossHealth);                   // added to boss script
             previousHealthAmount = currentBossHealth;
         }
         if (currentPlayerLives != previousLivesAmount)
         {
-            Debug.Log(currentPlayerLives);                  // Update player health ui here
+            Debug.Log(currentPlayerLives);                  // added to player script
             previousLivesAmount = currentPlayerLives;
         }
 
@@ -49,14 +50,16 @@ public class gameController : MonoBehaviour
         {
             if (boss.gameWin == true)
             {
-                Debug.Log("you win!");                      // Add win state here
+                Debug.Log("you win!");                      
                 endLevel = true;
             }
             else if (player.gameOver == true)
             {
-                Debug.Log("you lose!");                     //Add loose state here
+                Debug.Log("you lose!");                     
                 endLevel = true;
             }
+
+            SceneManager.LoadScene("GameOver");            // added same game over screen for both instances
         }
     }
 }
