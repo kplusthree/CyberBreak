@@ -60,7 +60,7 @@ public class Boss1MovementScript : MonoBehaviour
         speed = 1f;
         timeBetweenTeleports = 7f;
         timeBetweenAttacks = 3.5f;
-        boss = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<gameController>();
+        boss = GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>();
         randNum = 0;
         tempTeleport = false;
         whichAttack = true;

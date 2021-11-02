@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
  
- public class Text : MonoBehaviour
+ public class gameText : MonoBehaviour
  {
      public float time = 5; //Seconds to read the text
  
