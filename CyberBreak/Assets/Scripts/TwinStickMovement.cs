@@ -16,10 +16,12 @@ public class TwinStickMovement : MonoBehaviour
 
     private bool attack = false;
     public bool pause = false;
+    private bool facingRight;
 
     private CharacterController controller;
     public GameObject bulletPrefab;
     private static Rigidbody bulletRB;
+    Animator anim;
 
     private Vector2 movement;
     private Vector2 aim;
@@ -34,6 +36,7 @@ public class TwinStickMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         playerControls = new PlayerControls();
         playerInput = GetComponent<PlayerInput>();
+        anim = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -52,6 +55,7 @@ public class TwinStickMovement : MonoBehaviour
         HandleMovement();
         HandleRotation();
         HandlePause();
+        HandleAnimatorState();
     }
 
     void HandleInput()
@@ -82,6 +86,31 @@ public class TwinStickMovement : MonoBehaviour
                     StartCoroutine(Launch());
                 }
             }
+        }
+    }
+
+    void HandleAnimatorState()
+    {
+        Vector3 move = new Vector3(movement.x, 0, movement.y);
+
+        if (move.x < 0)
+        {
+            facingRight = false;
+            anim.SetInteger("State", 2);
+           
+        }
+        else if (move.x > 0)
+        {
+            facingRight = true;
+            anim.SetInteger("State", 3);
+        }
+        else if (move.x == 0 && move.y == 0 && !facingRight)
+        {
+            anim.SetInteger("State", 0);
+        }
+        else if (move.x == 0 && move.y == 0 && facingRight)
+        {
+            anim.SetInteger("State", 1);
         }
     }
 
