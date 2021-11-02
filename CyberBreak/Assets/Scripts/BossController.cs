@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BossController : MonoBehaviour
 {
@@ -10,21 +9,21 @@ public class BossController : MonoBehaviour
     [HideInInspector]
     public int maxHealth = 100;
     public bool gameWin;
-    public Slider slider;
+
+    public HealthBar healthBar;
 
 
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
-        slider.value = CalculateHealth();
+        healthBar.SetMaxHealth(maxHealth);
         gameWin = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        slider.value = CalculateHealth();
         if (health <= 0)
         {
             gameWin = true;
@@ -36,13 +35,15 @@ public class BossController : MonoBehaviour
     {
         if (collision.gameObject.tag == "PlayerBullet")
         {
-            health = health - 5;
+            //health = health - 5;
+            TakeDamage(5);
             Destroy(collision.gameObject);
         }
     }
 
-    int CalculateHealth ()
+    void TakeDamage(int damage)
     {
-        return health / maxHealth;
+        health -= damage;
+        healthBar.SetHealth(health);
     }
 }

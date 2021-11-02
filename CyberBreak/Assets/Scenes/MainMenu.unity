@@ -2193,24 +2193,25 @@ MonoBehaviour:
     Design, Game Design
 
 
-    Marcus Napoleoni: Programming
+    Marcus Napoleoni: Gameplay Programming
 
 
-    Hector Pacheco:
-    Level Design
+    Hector
+    Pacheco: Level Design
 
 
     Nathan Pluskota: 3D Artist
 
 
-    Kortney Menefee: Sound Design,
-    AI Programming
+    Kortney Menefee:
+    Sound Design, AI Programming
 
 
     Maxwell Neale: 2D Artist
 
 
-    Jessica Wise: UI/UX Design'
+    Jessica Wise:
+    UI/UX Design'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3181a08d4cbbd7e4fb97468053810239, type: 2}
   m_sharedMaterial: {fileID: 2789563643530789109, guid: 3181a08d4cbbd7e4fb97468053810239, type: 2}
@@ -2284,10 +2285,10 @@ MonoBehaviour:
   m_margin: {x: -630.3314, y: -373.56485, z: -622.7926, w: -386.8444}
   m_textInfo:
     textComponent: {fileID: 1374805074}
-    characterCount: 274
+    characterCount: 283
     spriteCount: 0
-    spaceCount: 42
-    wordCount: 37
+    spaceCount: 43
+    wordCount: 38
     linkCount: 0
     lineCount: 15
     pageCount: 1

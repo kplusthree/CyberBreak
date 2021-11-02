@@ -64,8 +64,8 @@ public void StartDialogue(Dialogue dialogue)
 
     void EndDialogue()
     {
-       //SceneManager.LoadScene("Courtyard");
+       SceneManager.LoadScene("Courtyard");
 
-       Debug.Log("End");
+       //Debug.Log("End");
     }
 }
