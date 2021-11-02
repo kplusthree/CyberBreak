@@ -18,8 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/GameOver.unity
     guid: 4cfec45a4e821694e8f76b9beac695fb
   - enabled: 0
-    path: Assets/Scenes/Cutscene.unity
-    guid: 6bd4c1d8865793c42a8b7b756ee8947f
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Scenes/NotUsed/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
