@@ -61,7 +61,7 @@ public class gameController : MonoBehaviour
             {
                 Debug.Log("you win!");
                 endLevel = true;
-                SceneManager.LoadScene("GameOver");
+                SceneManager.LoadScene("YouWin");
             }
             else if (player.gameOver == true)
             {
