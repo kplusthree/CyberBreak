@@ -44,6 +44,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2299122711622325574}
     m_Modifications:
+    - target: {fileID: 799309148834956194, guid: d47d797ffd0c54c438aacddf51785582, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f7f11473faa9bc43a49230399a9a94d, type: 2}
     - target: {fileID: 2077886546692962976, guid: d47d797ffd0c54c438aacddf51785582, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.095261
@@ -168,6 +172,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2299122711622325574}
     m_Modifications:
+    - target: {fileID: 799309148834956194, guid: d47d797ffd0c54c438aacddf51785582, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f7f11473faa9bc43a49230399a9a94d, type: 2}
     - target: {fileID: 2077886546692962976, guid: d47d797ffd0c54c438aacddf51785582, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.0255604
@@ -298,6 +306,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.1985774
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 456f37dc337cc734f8ee17d88be8ff3c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f7f11473faa9bc43a49230399a9a94d, type: 2}
     - target: {fileID: 919132149155446097, guid: 456f37dc337cc734f8ee17d88be8ff3c, type: 3}
       propertyPath: m_Name
       value: SM_Crate (2)
@@ -372,6 +384,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.1985774
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 456f37dc337cc734f8ee17d88be8ff3c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f7f11473faa9bc43a49230399a9a94d, type: 2}
     - target: {fileID: 919132149155446097, guid: 456f37dc337cc734f8ee17d88be8ff3c, type: 3}
       propertyPath: m_Name
       value: SM_Crate (1)
