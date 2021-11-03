@@ -6,42 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-      public GameObject pauseMenuUI;
+    [HideInInspector]
+    public TwinStickMovement pause;
 
-      public static bool GameIsPaused = false;
-
-      void Update()
-      {
-          if(Gamepad.current.aButton.wasPressedThisFrame)
-          { 
-            if (GameIsPaused)
-            {
-              ResumeGame();
-            }
-            else
-            {
-              PauseGame();
-            }
-          }
-      }
-
-      public void PauseGame()
-      {
-          Time.timeScale = 0f;
-          pauseMenuUI.SetActive(true);
-          GameIsPaused = true;
-      }
-
-      public void ResumeGame()
-      {
-        Time.timeScale = 1;
-        pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        GameIsPaused = false;
-      }
-
-         public void ReturnMenu()
+    void Start()
     {
-        SceneManager.LoadScene("MainMenu");
+        pause = GameObject.FindGameObjectWithTag("Player").GetComponent<TwinStickMovement>();
+        pause.pause = true;
+    }
+
+    public void ResumeGame()
+    {
+      pause.pause = false;
+      SceneManager.UnloadSceneAsync("PauseMenu");
+    }
+
+    public void ReturnMenu()
+    {
+      SceneManager.LoadScene("MainMenu");
     }
 }

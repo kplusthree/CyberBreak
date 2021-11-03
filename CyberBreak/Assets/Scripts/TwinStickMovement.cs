@@ -16,6 +16,7 @@ public class TwinStickMovement : MonoBehaviour
 
     private bool attack = false;
     public bool pause = false;
+    public bool paused = false;
     private bool facingRight;
 
     private CharacterController controller;
@@ -70,6 +71,26 @@ public class TwinStickMovement : MonoBehaviour
     {
         movement = playerControls.Controls.Movement.ReadValue<Vector2>();
         aim = playerControls.Controls.Aim.ReadValue<Vector2>();
+
+        playerControls.Controls.Pause.performed += ctx => HandlePause();
+
+        if (pause == true)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+    }
+
+    void HandlePause()
+    {
+        paused = true;
+        if (pause == false && paused == false)
+        {
+            SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
+        }
     }
 
     void HandleMovement()
@@ -152,14 +173,5 @@ public class TwinStickMovement : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         Destroy(bullet);
-    }
-
-    void HandlePause()
-    {
-        if (pause == false)
-        {
-            pause = true;
-            playerControls.Controls.Pause.performed += ctx => SceneManager.LoadScene("PauseMenu");
-        }
     }
 }
