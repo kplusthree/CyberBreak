@@ -50,16 +50,16 @@ public class TutorialBossMovement : MonoBehaviour
             deathSource.Play();
         }
 
-        if (attack == false)
+        if (attack == true)
         {
             anim.SetInteger("State", 1);
-            // boss looks at player
-            transform.LookAt(target);
-            StartCoroutine(SmallAttack());
         }
         else
         {
-            anim.SetInteger("State", 1);
+            anim.SetInteger("State", 0);
+            // boss looks at player
+            transform.LookAt(target);
+            StartCoroutine(SmallAttack());
         }
 
         // let's the boss know what quadrant the player is in

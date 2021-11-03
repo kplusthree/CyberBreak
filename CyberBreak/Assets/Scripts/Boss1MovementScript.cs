@@ -51,6 +51,8 @@ public class Boss1MovementScript : MonoBehaviour
     public AudioSource deathSource;
     public AudioSource popSource;
 
+    Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +72,7 @@ public class Boss1MovementScript : MonoBehaviour
         bulletSource.clip = bulletClip;
         deathSource.clip = deathClip;
         popSource.clip = popClip;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -112,8 +115,9 @@ public class Boss1MovementScript : MonoBehaviour
         // player location
         target = playerObj.transform;
 
-        if (attack == false)
+        if (attack == false && tempTeleport == false)
         {
+            anim.SetInteger("State", 0);
             // boss looks at player
             transform.LookAt(target);
         }
@@ -127,6 +131,7 @@ public class Boss1MovementScript : MonoBehaviour
     // Teleports the boss to one of 3 spots
     IEnumerator Teleport()
     {
+        anim.SetInteger("State", 4);
         tempTeleport = false;
 
         // create random number between 1 and 3
@@ -222,6 +227,8 @@ public class Boss1MovementScript : MonoBehaviour
         attack = true;
         int attackTimes = 3;
 
+        anim.SetInteger("State", 1);
+
         // launch the bullets at the player
         for (int i = 0; i < attackTimes; i++)
         {
@@ -258,6 +265,7 @@ public class Boss1MovementScript : MonoBehaviour
     {
         attack = true;
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 1, 0, false));
+        anim.SetInteger("State", 3);
 
         // wait until attack has finished
         yield return new WaitUntil(() => tempAttack);
@@ -271,6 +279,7 @@ public class Boss1MovementScript : MonoBehaviour
         transform.position = middleOfRoom;
         attack = true;
         quadrant = Quadrant(degreeFacing);
+        anim.SetInteger("State", 3);
 
         for (int i = 0; i < 4; i++)
         {
@@ -306,6 +315,7 @@ public class Boss1MovementScript : MonoBehaviour
         attack = true;
         quadrant = Quadrant(degreeFacing);
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 1, quadrant, true));
+        anim.SetInteger("State", 2);
 
         // wait until attack has finished
         yield return new WaitUntil(() => tempAttack);
