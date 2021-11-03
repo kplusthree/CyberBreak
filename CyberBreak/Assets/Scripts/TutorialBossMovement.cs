@@ -26,6 +26,8 @@ public class TutorialBossMovement : MonoBehaviour
     public AudioSource bulletSource;
     public AudioSource deathSource;
 
+    Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,7 @@ public class TutorialBossMovement : MonoBehaviour
         boss = GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>();
         bulletSource.clip = bulletClip;
         deathSource.clip = deathClip;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -49,9 +52,14 @@ public class TutorialBossMovement : MonoBehaviour
 
         if (attack == false)
         {
+            anim.SetInteger("State", 1);
             // boss looks at player
             transform.LookAt(target);
             StartCoroutine(SmallAttack());
+        }
+        else
+        {
+            anim.SetInteger("State", 1);
         }
 
         // let's the boss know what quadrant the player is in
