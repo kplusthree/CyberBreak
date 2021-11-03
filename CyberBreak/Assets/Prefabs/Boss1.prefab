@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7439018381731492726}
   - component: {fileID: 3965207340773096929}
   - component: {fileID: 8080221791168565562}
-  - component: {fileID: 1182794389331011204}
+  - component: {fileID: -943896151558028692}
   m_Layer: 0
   m_Name: Boss1
   m_TagString: Boss
@@ -183,7 +183,7 @@ MonoBehaviour:
   health: 20
   maxHealth: 100
   gameWin: 0
-  slider: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!65 &8080221791168565562
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1182794389331011204
+--- !u!114 &-943896151558028692
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2243059d47b9d42a8aa2749ebd6423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4611249451867358970, guid: 83a617f86d92472439ccd4baebcc30c3, type: 3}
+  bulletPrefab: {fileID: 0}
   boss: {fileID: 0}
   middleOfRoom: {x: 0, y: 0, z: 0}
   pointOne: {x: 0, y: 0, z: 0}
