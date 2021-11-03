@@ -94,7 +94,7 @@ public class Boss1MovementScript : MonoBehaviour
             speed = 0.5f;
             StartCoroutine(BigAttack(degreeFacing));
         }
-        if (attack == false && whichAttack == true)
+        else if (attack == false && whichAttack == true)
         {
             StartCoroutine(ChooseAttack());
         }  
@@ -274,6 +274,15 @@ public class Boss1MovementScript : MonoBehaviour
             }
 
             yield return new WaitUntil(() => tempAttack);
+        }
+
+        if (oneThird == true)
+        {
+            oneThird = false;
+        }
+        if (twoThirds == true)
+        {
+            twoThirds = false;
         }
 
         attack = false;
