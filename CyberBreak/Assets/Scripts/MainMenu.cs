@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void LoadGame() 
     {
-        SceneManager.LoadScene("Courtyard");
+        SceneManager.LoadScene("PreTutorialCutscene");
     }
 
     public void ReturnMenu()
@@ -19,10 +19,5 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Quit!");
-    }
-
-    public void ReturnGame()
-    {
-        SceneManager.UnloadSceneAsync("PauseMenu");
     }
 }

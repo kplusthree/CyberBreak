@@ -9,14 +9,32 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 61449994873aae941984177aceb9ae55
   - enabled: 1
+    path: Assets/Scenes/CutScenes/PreTutorialCutscene.unity
+    guid: 302b15b9bb7b9aa46a76f6ef4a391f0c
+  - enabled: 1
+    path: Assets/Scenes/CutScenes/TutorialCutscene.unity
+    guid: ca42ad4618bf90c4eb78f7e9b594d182
+  - enabled: 1
     path: Assets/Scenes/Courtyard.unity
     guid: 91a6b27a5c375914d9ff3620c576fa27
   - enabled: 1
-    path: Assets/Scenes/PauseMenu.unity
-    guid: 83611b1f7138c344686e30954d531cae
+    path: Assets/Scenes/CutScenes/InvestigatorCutScene.unity
+    guid: 8fce4c3574ef8084380be7533826a5ea
+  - enabled: 1
+    path: Assets/Scenes/EvidenceLocker.unity
+    guid: 72c617685b576a74e833e13d4ca847b5
+  - enabled: 1
+    path: Assets/Scenes/CutScenes/FinalCutscene.unity
+    guid: aeca764916546334cbb21e34942160e4
+  - enabled: 1
+    path: Assets/Scenes/YouWin.unity
+    guid: df74bf2803d95d24c8dff43ad8a25c7c
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 4cfec45a4e821694e8f76b9beac695fb
+  - enabled: 1
+    path: Assets/Scenes/PauseMenu.unity
+    guid: 83611b1f7138c344686e30954d531cae
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
