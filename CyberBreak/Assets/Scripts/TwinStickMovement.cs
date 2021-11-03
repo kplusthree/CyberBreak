@@ -31,7 +31,10 @@ public class TwinStickMovement : MonoBehaviour
     private PlayerControls playerControls;
     private PlayerInput playerInput;
 
-    public GameObject pauseMenuUI;
+    public AudioClip walkClip;
+    public AudioClip bulletClip;
+    public AudioSource walkSource;
+    public AudioSource bulletSource;
 
     void Awake()
     {
@@ -39,6 +42,9 @@ public class TwinStickMovement : MonoBehaviour
         playerControls = new PlayerControls();
         playerInput = GetComponent<PlayerInput>();
         anim = GetComponent<Animator>();
+
+        walkSource.clip = walkClip;
+        bulletSource.clip = bulletClip;
     }
 
     private void OnEnable()
@@ -99,20 +105,23 @@ public class TwinStickMovement : MonoBehaviour
         {
             facingRight = false;
             anim.SetInteger("State", 2);
-           
+            walkSource.Play();
         }
         else if (move.x > 0)
         {
             facingRight = true;
             anim.SetInteger("State", 3);
+            walkSource.Play();
         }
         else if (move.x == 0 && move.y == 0 && !facingRight)
         {
             anim.SetInteger("State", 0);
+            walkSource.Stop();
         }
         else if (move.x == 0 && move.y == 0 && facingRight)
         {
             anim.SetInteger("State", 1);
+            walkSource.Stop();
         }
     }
 
@@ -125,6 +134,7 @@ public class TwinStickMovement : MonoBehaviour
         //bulletSource.Play();
         bulletRB = BossBullet.GetComponent<Projectile>().GetComponent<Rigidbody>();
         bulletRB.AddForce(transform.forward * 10, ForceMode.Impulse);
+        bulletSource.Play();
         yield return new WaitForSeconds(shootRate);
         attack = false;
 
@@ -149,7 +159,7 @@ public class TwinStickMovement : MonoBehaviour
         if (pause == false)
         {
             pause = true;
-            playerControls.Controls.Pause.performed += ctx => pauseMenuUI.SetActive(true);
+            playerControls.Controls.Pause.performed += ctx => SceneManager.LoadScene("PauseMenu");
         }
     }
 }

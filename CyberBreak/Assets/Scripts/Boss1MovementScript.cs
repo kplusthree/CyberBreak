@@ -44,9 +44,12 @@ public class Boss1MovementScript : MonoBehaviour
     [HideInInspector]
     public int quadrant;
 
-    //public AudioClip bulletClip;
-    //[HideInInspector]
-    //public AudioSource bulletSource;
+    public AudioClip bulletClip;
+    public AudioClip deathClip;
+    public AudioClip popClip;
+    public AudioSource bulletSource;
+    public AudioSource deathSource;
+    public AudioSource popSource;
 
     // Start is called before the first frame update
     void Start()
@@ -62,8 +65,11 @@ public class Boss1MovementScript : MonoBehaviour
         timeBetweenAttacks = 3.5f;
         boss = GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>();
         randNum = 0;
-        tempTeleport = false;
+        tempTeleport = true;
         whichAttack = true;
+        bulletSource.clip = bulletClip;
+        deathSource.clip = deathClip;
+        popSource.clip = popClip;
     }
 
     // Update is called once per frame
@@ -77,6 +83,10 @@ public class Boss1MovementScript : MonoBehaviour
         {
             twoThirds = false;
             oneThird = true;
+        }
+        else if (boss.currentBossHealth <= 0)
+        {
+            deathSource.Play();
         }
 
         if (tempTeleport == true)
@@ -240,6 +250,7 @@ public class Boss1MovementScript : MonoBehaviour
         //bulletSource.Play();
         bulletRB = BossBullet.GetComponent<Projectile>().GetComponent<Rigidbody>();
         bulletRB.AddForce(transform.forward * 10, ForceMode.Impulse);
+        bulletSource.Play();
     }
 
     // Fires a line of bullets in an arc/semicircle towards the player
@@ -274,6 +285,15 @@ public class Boss1MovementScript : MonoBehaviour
             }
 
             yield return new WaitUntil(() => tempAttack);
+        }
+
+        if (oneThird == true)
+        {
+            oneThird = false;
+        }
+        if (twoThirds == true)
+        {
+            twoThirds = false;
         }
 
         attack = false;
@@ -402,6 +422,7 @@ public class Boss1MovementScript : MonoBehaviour
             for (int j = 0; j < amountOfBullets; j++)
             {
                 GameObject BulletObject = Instantiate(bulletPrefab, transform.position + transform.forward * (layerBuffer * (i + 1)), transform.rotation);
+                popSource.Play();
                 transform.Rotate(0f, degreesBetween, 0f, Space.Self);
 
                 yield return new WaitForSeconds(0.1f * speed);
@@ -417,6 +438,7 @@ public class Boss1MovementScript : MonoBehaviour
         {
             bulletRB = BossBullet.GetComponent<Projectile>().GetComponent<Rigidbody>();
             bulletRB.AddForce(BossBullet.transform.forward * 10, ForceMode.Impulse);
+            bulletSource.Play();
 
             if (layers == 1 && fullCirlce == false)
             {
@@ -441,8 +463,6 @@ public class Boss1MovementScript : MonoBehaviour
                 }
             }
         }
-
-            
 
         yield return new WaitForSeconds(1.0f);
 
