@@ -3190,6 +3190,10 @@ PrefabInstance:
       propertyPath: popSource
       value: 
       objectReference: {fileID: 1280449174}
+    - target: {fileID: 512905428952882505, guid: 6a4c14da16f78264fa5bc476705ed52b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.058
+      objectReference: {fileID: 0}
     - target: {fileID: 1182794389331011204, guid: 6a4c14da16f78264fa5bc476705ed52b, type: 3}
       propertyPath: middleOfRoom.y
       value: 1

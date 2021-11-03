@@ -6969,7 +6969,6 @@ MonoBehaviour:
   player: {fileID: 0}
   boss: {fileID: 0}
   currentBossHealth: 0
-  menuMusicClip: {fileID: 8300000, guid: ad6e003d671849d4da418d64fff2d051, type: 3}
   tutorialMusicClip: {fileID: 8300000, guid: c4def8cce9876df4b85ae538cf9b0422, type: 3}
   Boss1MusicClip: {fileID: 8300000, guid: 0a5572b7bdc3ff849906b7f83175871c, type: 3}
   musicSource: {fileID: 1057391156}
