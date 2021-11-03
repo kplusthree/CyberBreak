@@ -33,6 +33,8 @@ public class gameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Scene scene = SceneManager.GetActiveScene();
+
         currentPlayerLives = player.lives;
         currentBossHealth = boss.health;
 
@@ -49,7 +51,13 @@ public class gameController : MonoBehaviour
 
         if(endLevel == false)
         {
-            if (boss.gameWin == true)
+            if (boss.gameWin == true && scene.name == "Courtyard")
+            {
+                Debug.Log("you win!");
+                endLevel = true;
+                SceneManager.LoadScene("EvidenceLocker");
+            }
+            else if (boss.gameWin == true && scene.name == "EvidenceLocker")
             {
                 Debug.Log("you win!");
                 endLevel = true;
