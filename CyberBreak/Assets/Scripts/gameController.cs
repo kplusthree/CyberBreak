@@ -17,6 +17,11 @@ public class gameController : MonoBehaviour
     [HideInInspector]
     public int currentBossHealth;
     private int previousHealthAmount;
+    private bool setMusic;
+
+    public AudioClip tutorialMusicClip;
+    public AudioClip Boss1MusicClip;
+    public AudioSource musicSource;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +33,7 @@ public class gameController : MonoBehaviour
         currentBossHealth = boss.health;
         previousHealthAmount = currentBossHealth;
         endLevel = false;
+        setMusic = false;
     }
 
     // Update is called once per frame
@@ -37,6 +43,23 @@ public class gameController : MonoBehaviour
 
         currentPlayerLives = player.lives;
         currentBossHealth = boss.health;
+
+        if (setMusic == false)
+        {
+
+            if (scene.name == "EvidenceLocker")
+            {
+                musicSource.clip = Boss1MusicClip;
+            }
+            else
+            {
+                musicSource.clip = tutorialMusicClip;
+            }
+
+            musicSource.Play();
+
+            setMusic = true;
+        }
 
         if (currentBossHealth != previousHealthAmount)
         {

@@ -21,12 +21,19 @@ public class TutorialBossMovement : MonoBehaviour
     [HideInInspector]
     bool attack;
 
+    public AudioClip bulletClip;
+    public AudioClip deathClip;
+    public AudioSource bulletSource;
+    public AudioSource deathSource;
+
     // Start is called before the first frame update
     void Start()
     {
         playerObj = GameObject.Find("Player");
         attack = false;
         boss = GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>();
+        bulletSource.clip = bulletClip;
+        deathSource.clip = deathClip;
     }
 
     // Update is called once per frame
@@ -34,6 +41,11 @@ public class TutorialBossMovement : MonoBehaviour
     {
         // player location
         target = playerObj.transform;
+
+        if (boss.currentBossHealth <= 0)
+        {
+            deathSource.Play();
+        }
 
         if (attack == false)
         {
@@ -82,5 +94,6 @@ public class TutorialBossMovement : MonoBehaviour
         //bulletSource.Play();
         bulletRB = BossBullet.GetComponent<Projectile>().GetComponent<Rigidbody>();
         bulletRB.AddForce(transform.forward * 10, ForceMode.Impulse);
+        bulletSource.Play();
     }
 }
