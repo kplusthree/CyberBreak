@@ -94,7 +94,7 @@ public class Boss1MovementScript : MonoBehaviour
             speed = 0.5f;
             StartCoroutine(BigAttack(degreeFacing));
         }
-        else if (attack == false && whichAttack == true)
+        if (attack == false && whichAttack == true)
         {
             StartCoroutine(ChooseAttack());
         }  
