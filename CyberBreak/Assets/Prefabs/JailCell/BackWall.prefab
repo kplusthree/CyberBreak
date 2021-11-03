@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a6a0fde102d66c3409be136c7a6d6509, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: acaae1b3038dc3d46a417d5fcb96ca2a, type: 2}
     - target: {fileID: 919132149155446097, guid: a6a0fde102d66c3409be136c7a6d6509, type: 3}
       propertyPath: m_Name
       value: Neale_Wall2 (7)
@@ -169,6 +173,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a6a0fde102d66c3409be136c7a6d6509, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: acaae1b3038dc3d46a417d5fcb96ca2a, type: 2}
     - target: {fileID: 919132149155446097, guid: a6a0fde102d66c3409be136c7a6d6509, type: 3}
       propertyPath: m_Name
       value: Neale_Wall2 (9)
@@ -417,6 +425,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d11a7f9fb716bee4d8366a62275110ae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 70f4d440a4ea00f4eaf42eafea209058, type: 2}
     - target: {fileID: 919132149155446097, guid: d11a7f9fb716bee4d8366a62275110ae, type: 3}
       propertyPath: m_Name
       value: Neale_WallVent (2)
@@ -479,6 +491,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a6a0fde102d66c3409be136c7a6d6509, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: acaae1b3038dc3d46a417d5fcb96ca2a, type: 2}
     - target: {fileID: 919132149155446097, guid: a6a0fde102d66c3409be136c7a6d6509, type: 3}
       propertyPath: m_Name
       value: Neale_Wall2 (8)
@@ -603,6 +619,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d11a7f9fb716bee4d8366a62275110ae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 70f4d440a4ea00f4eaf42eafea209058, type: 2}
     - target: {fileID: 919132149155446097, guid: d11a7f9fb716bee4d8366a62275110ae, type: 3}
       propertyPath: m_Name
       value: Neale_WallVent (1)
@@ -665,6 +685,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3b549f54e676f6442969a81234d41bde, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b6f692f34b4c38344822fa676eee1957, type: 2}
     - target: {fileID: 919132149155446097, guid: 3b549f54e676f6442969a81234d41bde, type: 3}
       propertyPath: m_Name
       value: Neale_WallExtended (2)
@@ -727,6 +751,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d11a7f9fb716bee4d8366a62275110ae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 70f4d440a4ea00f4eaf42eafea209058, type: 2}
     - target: {fileID: 919132149155446097, guid: d11a7f9fb716bee4d8366a62275110ae, type: 3}
       propertyPath: m_Name
       value: Neale_WallVent
@@ -789,6 +817,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3b549f54e676f6442969a81234d41bde, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b6f692f34b4c38344822fa676eee1957, type: 2}
     - target: {fileID: 919132149155446097, guid: 3b549f54e676f6442969a81234d41bde, type: 3}
       propertyPath: m_Name
       value: Neale_WallExtended

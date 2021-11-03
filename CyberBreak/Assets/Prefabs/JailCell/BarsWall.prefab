@@ -119,6 +119,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.001782277
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d25a4acc7afe124b825325f7b08eb13, type: 2}
     - target: {fileID: 919132149155446097, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
       propertyPath: m_Name
       value: Neale_BarConnector (5)
@@ -193,6 +197,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.001782277
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d25a4acc7afe124b825325f7b08eb13, type: 2}
     - target: {fileID: 919132149155446097, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
       propertyPath: m_Name
       value: Neale_BarConnector (6)
@@ -267,6 +275,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.001782277
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d25a4acc7afe124b825325f7b08eb13, type: 2}
     - target: {fileID: 919132149155446097, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
       propertyPath: m_Name
       value: Neale_BarConnector (1)
@@ -341,6 +353,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.001782277
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d25a4acc7afe124b825325f7b08eb13, type: 2}
     - target: {fileID: 919132149155446097, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
       propertyPath: m_Name
       value: Neale_BarConnector
@@ -415,6 +431,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.001782277
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d25a4acc7afe124b825325f7b08eb13, type: 2}
     - target: {fileID: 919132149155446097, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
       propertyPath: m_Name
       value: Neale_BarConnector (11)
@@ -489,6 +509,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.001782277
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d25a4acc7afe124b825325f7b08eb13, type: 2}
     - target: {fileID: 919132149155446097, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
       propertyPath: m_Name
       value: Neale_BarConnector (10)
@@ -563,6 +587,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.001782277
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d25a4acc7afe124b825325f7b08eb13, type: 2}
     - target: {fileID: 919132149155446097, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
       propertyPath: m_Name
       value: Neale_BarConnector (3)
@@ -637,6 +665,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.001782277
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d25a4acc7afe124b825325f7b08eb13, type: 2}
     - target: {fileID: 919132149155446097, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
       propertyPath: m_Name
       value: Neale_BarConnector (7)
@@ -711,6 +743,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.001782277
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d25a4acc7afe124b825325f7b08eb13, type: 2}
     - target: {fileID: 919132149155446097, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
       propertyPath: m_Name
       value: Neale_BarConnector (2)
@@ -785,6 +821,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.001782277
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d25a4acc7afe124b825325f7b08eb13, type: 2}
     - target: {fileID: 919132149155446097, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
       propertyPath: m_Name
       value: Neale_BarConnector (8)
@@ -859,6 +899,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.001782277
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d25a4acc7afe124b825325f7b08eb13, type: 2}
     - target: {fileID: 919132149155446097, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
       propertyPath: m_Name
       value: Neale_BarConnector (9)
@@ -933,6 +977,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.001782277
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d25a4acc7afe124b825325f7b08eb13, type: 2}
     - target: {fileID: 919132149155446097, guid: 5cfc8a6a992aa084d8a8a96a1cee68e6, type: 3}
       propertyPath: m_Name
       value: Neale_BarConnector (4)
