@@ -62,7 +62,7 @@ public class Boss1MovementScript : MonoBehaviour
         timeBetweenAttacks = 3.5f;
         boss = GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>();
         randNum = 0;
-        tempTeleport = false;
+        tempTeleport = true;
         whichAttack = true;
     }
 
@@ -441,8 +441,6 @@ public class Boss1MovementScript : MonoBehaviour
                 }
             }
         }
-
-            
 
         yield return new WaitForSeconds(1.0f);
 
