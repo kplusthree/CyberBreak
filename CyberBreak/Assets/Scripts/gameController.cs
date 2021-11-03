@@ -78,13 +78,13 @@ public class gameController : MonoBehaviour
             {
                 Debug.Log("you win!");
                 endLevel = true;
-                SceneManager.LoadScene("EvidenceLocker");
+                SceneManager.LoadScene("InvestigatorCutscene");
             }
             else if (boss.gameWin == true && scene.name == "EvidenceLocker")
             {
                 Debug.Log("you win!");
                 endLevel = true;
-                SceneManager.LoadScene("YouWin");
+                SceneManager.LoadScene("FinalCutscene");
             }
             else if (player.gameOver == true)
             {
