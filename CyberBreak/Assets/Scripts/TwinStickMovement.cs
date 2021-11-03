@@ -31,6 +31,8 @@ public class TwinStickMovement : MonoBehaviour
     private PlayerControls playerControls;
     private PlayerInput playerInput;
 
+    public GameObject pauseMenuUI;
+
     void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -147,7 +149,7 @@ public class TwinStickMovement : MonoBehaviour
         if (pause == false)
         {
             pause = true;
-            playerControls.Controls.Pause.performed += ctx => SceneManager.LoadScene("PauseMenu");
+            playerControls.Controls.Pause.performed += ctx => pauseMenuUI.SetActive(true);
         }
     }
 }
