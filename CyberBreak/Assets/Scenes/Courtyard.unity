@@ -4198,7 +4198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742ccf56541e4ea438cf6858dc9b63c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 5
+  time: 3
 --- !u!1001 &1032750773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4876,7 +4876,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1001 &1204442358
 PrefabInstance:
@@ -5579,7 +5579,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1494529016
 RectTransform:
@@ -7629,15 +7629,15 @@ PrefabInstance:
     - target: {fileID: 606078970107718714, guid: d21df0b9b2033a240ae623530c09efe4, type: 3}
       propertyPath: hearts.Array.data[0]
       value: 
-      objectReference: {fileID: 1797352240}
+      objectReference: {fileID: 0}
     - target: {fileID: 606078970107718714, guid: d21df0b9b2033a240ae623530c09efe4, type: 3}
       propertyPath: hearts.Array.data[1]
       value: 
-      objectReference: {fileID: 734766258}
+      objectReference: {fileID: 0}
     - target: {fileID: 606078970107718714, guid: d21df0b9b2033a240ae623530c09efe4, type: 3}
       propertyPath: hearts.Array.data[2]
       value: 
-      objectReference: {fileID: 459586598}
+      objectReference: {fileID: 0}
     - target: {fileID: 606078970107718714, guid: d21df0b9b2033a240ae623530c09efe4, type: 3}
       propertyPath: musicSource
       value: 
