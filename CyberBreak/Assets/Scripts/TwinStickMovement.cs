@@ -16,6 +16,7 @@ public class TwinStickMovement : MonoBehaviour
 
     private bool attack = false;
     public bool pause = false;
+    public bool paused = false;
     private bool facingRight;
 
     private CharacterController controller;
@@ -84,8 +85,9 @@ public class TwinStickMovement : MonoBehaviour
 
     void HandlePause()
     {
-        if (pause == false)
+        if (pause == false && paused == false)
         {
+            paused = true;
             SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
         }
     }
