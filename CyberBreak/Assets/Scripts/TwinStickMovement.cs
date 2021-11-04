@@ -63,7 +63,6 @@ public class TwinStickMovement : MonoBehaviour
         HandleInput();
         HandleMovement();
         HandleRotation();
-        HandlePause();
         HandleAnimatorState();
     }
 
