@@ -86,9 +86,9 @@ public class TwinStickMovement : MonoBehaviour
 
     void HandlePause()
     {
-        paused = true;
         if (pause == false && paused == false)
         {
+            paused = true;
             SceneManager.LoadScene("PauseMenu", LoadSceneMode.Additive);
         }
     }
