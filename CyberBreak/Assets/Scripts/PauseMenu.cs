@@ -18,6 +18,7 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
       pause.pause = false;
+      pause.paused = false;
       SceneManager.UnloadSceneAsync("PauseMenu");
     }
 
