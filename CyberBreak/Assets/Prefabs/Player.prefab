@@ -74,7 +74,7 @@ MonoBehaviour:
   playerSpeed: 5
   dashSpeed: 50
   dashLength: 0.1
-  dashLimit: 1
+  dashLimit: 0.5
   shootRate: 0.5
   controllerDeadzone: 0.1
   rotateSmoothing: 1000

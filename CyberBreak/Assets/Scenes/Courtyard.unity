@@ -444,10 +444,6 @@ PrefabInstance:
       propertyPath: bulletSource
       value: 
       objectReference: {fileID: 1525306588}
-    - target: {fileID: 5829842696614394869, guid: 985738273006123479d015477bdd172a, type: 3}
-      propertyPath: dashLength
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 985738273006123479d015477bdd172a, type: 3}
 --- !u!1001 &121100447

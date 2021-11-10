@@ -23,7 +23,8 @@ public class TwinStickMovement : MonoBehaviour
     public bool pause = false;
     public bool paused = false;
     private bool facingRight;
-    private bool isDashing = false;
+    [HideInInspector]
+    public bool isDashing = false;
 
     private CharacterController controller;
     public GameObject bulletPrefab;
@@ -103,8 +104,6 @@ public class TwinStickMovement : MonoBehaviour
     void HandleMovement()
     {
         Vector3 move = new Vector3(movement.x, 0, movement.y);
-
-        Debug.Log(dashLimitTimer);
 
         if (dashLimitTimer <= 0)
         {
