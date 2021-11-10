@@ -10,6 +10,11 @@ using UnityEngine.SceneManagement;
 public class TwinStickMovement : MonoBehaviour
 {
     public float playerSpeed = 5f;
+    public float dashSpeed = 30f;
+    public float dashLength = 0.2f;
+    private float dashLengthTimer;
+    public float dashLimit = 3f;
+    private float dashLimitTimer = 0f;
     public float shootRate = 0.5f;
     public float controllerDeadzone = 0.1f;
     public float rotateSmoothing = 1000f;
@@ -18,6 +23,7 @@ public class TwinStickMovement : MonoBehaviour
     public bool pause = false;
     public bool paused = false;
     private bool facingRight;
+    private bool isDashing = false;
 
     private CharacterController controller;
     public GameObject bulletPrefab;
@@ -46,6 +52,8 @@ public class TwinStickMovement : MonoBehaviour
 
         walkSource.clip = walkClip;
         bulletSource.clip = bulletClip;
+
+        dashLengthTimer = dashLength;
     }
 
     private void OnEnable()
@@ -95,7 +103,36 @@ public class TwinStickMovement : MonoBehaviour
     void HandleMovement()
     {
         Vector3 move = new Vector3(movement.x, 0, movement.y);
-        controller.Move(move * Time.deltaTime * playerSpeed);
+
+        Debug.Log(dashLimitTimer);
+
+        if (dashLimitTimer <= 0)
+        {
+            playerControls.Controls.Dash.performed += ctx => isDashing = true;
+        }
+        else
+        {
+            isDashing = false;
+        }
+        
+        if (dashLengthTimer <= 0)
+        {
+            isDashing = false;
+            dashLimitTimer = dashLimit;
+        }
+
+        if(isDashing == false)
+        {
+            controller.Move(move * Time.deltaTime * playerSpeed);
+            dashLengthTimer = dashLength;
+        }
+        else
+        {
+            controller.Move(move * Time.deltaTime * dashSpeed);
+            dashLengthTimer -= Time.deltaTime;
+        }
+
+        dashLimitTimer -= Time.deltaTime;
     }
 
     void HandleRotation()

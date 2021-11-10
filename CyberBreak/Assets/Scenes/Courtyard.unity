@@ -372,18 +372,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -5264697560416230664, guid: 985738273006123479d015477bdd172a, type: 3}
-      propertyPath: m_StepOffset
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4529285139574909775, guid: 985738273006123479d015477bdd172a, type: 3}
-      propertyPath: hearts.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -4529285139574909775, guid: 985738273006123479d015477bdd172a, type: 3}
-      propertyPath: lives
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: -4529285139574909775, guid: 985738273006123479d015477bdd172a, type: 3}
       propertyPath: hearts.Array.data[0]
       value: 
@@ -397,33 +385,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1797352240}
     - target: {fileID: -4529285139574909775, guid: 985738273006123479d015477bdd172a, type: 3}
-      propertyPath: walkSource
-      value: 
-      objectReference: {fileID: 498188277}
-    - target: {fileID: -4529285139574909775, guid: 985738273006123479d015477bdd172a, type: 3}
-      propertyPath: bulletSource
-      value: 
-      objectReference: {fileID: 1525306588}
-    - target: {fileID: -4529285139574909775, guid: 985738273006123479d015477bdd172a, type: 3}
       propertyPath: damageSource
       value: 
       objectReference: {fileID: 834687109}
-    - target: {fileID: -4529285139574909775, guid: 985738273006123479d015477bdd172a, type: 3}
-      propertyPath: walkClip
-      value: 
-      objectReference: {fileID: 8300000, guid: cceba0f63db045d48a327d5110a55ea5, type: 3}
-    - target: {fileID: -4529285139574909775, guid: 985738273006123479d015477bdd172a, type: 3}
-      propertyPath: bulletClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 846ad18370b99bc4e9dd79ace46f57c8, type: 3}
-    - target: {fileID: -4529285139574909775, guid: 985738273006123479d015477bdd172a, type: 3}
-      propertyPath: damageClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 5fc948c321fc5ae42a9a9744cd6156d0, type: 3}
-    - target: {fileID: -4529285139574909775, guid: 985738273006123479d015477bdd172a, type: 3}
-      propertyPath: deathClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 65f2031b59671e74a853e6ed2b46d54e, type: 3}
     - target: {fileID: 4216834390411183023, guid: 985738273006123479d015477bdd172a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.46
@@ -473,21 +437,17 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5829842696614394869, guid: 985738273006123479d015477bdd172a, type: 3}
-      propertyPath: walkClip
+      propertyPath: walkSource
       value: 
-      objectReference: {fileID: 8300000, guid: cceba0f63db045d48a327d5110a55ea5, type: 3}
-    - target: {fileID: 5829842696614394869, guid: 985738273006123479d015477bdd172a, type: 3}
-      propertyPath: bulletClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 846ad18370b99bc4e9dd79ace46f57c8, type: 3}
+      objectReference: {fileID: 498188277}
     - target: {fileID: 5829842696614394869, guid: 985738273006123479d015477bdd172a, type: 3}
       propertyPath: bulletSource
       value: 
       objectReference: {fileID: 1525306588}
     - target: {fileID: 5829842696614394869, guid: 985738273006123479d015477bdd172a, type: 3}
-      propertyPath: walkSource
-      value: 
-      objectReference: {fileID: 498188277}
+      propertyPath: dashLength
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 985738273006123479d015477bdd172a, type: 3}
 --- !u!1001 &121100447

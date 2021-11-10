@@ -51,8 +51,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 3
-  hearts: []
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   gameOver: 0
+  damageClip: {fileID: 8300000, guid: 5fc948c321fc5ae42a9a9744cd6156d0, type: 3}
+  deathClip: {fileID: 8300000, guid: 65f2031b59671e74a853e6ed2b46d54e, type: 3}
+  damageSource: {fileID: 0}
 --- !u!114 &5829842696614394869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,11 +72,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 5
+  dashSpeed: 50
+  dashLength: 0.1
+  dashLimit: 1
   shootRate: 0.5
   controllerDeadzone: 0.1
   rotateSmoothing: 1000
   pause: 0
+  paused: 0
   bulletPrefab: {fileID: 4611249451867358970, guid: 957321e24e8757949bcb83b2f898b2a5, type: 3}
+  walkClip: {fileID: 8300000, guid: cceba0f63db045d48a327d5110a55ea5, type: 3}
+  bulletClip: {fileID: 8300000, guid: 846ad18370b99bc4e9dd79ace46f57c8, type: 3}
+  walkSource: {fileID: 0}
+  bulletSource: {fileID: 0}
 --- !u!136 &8525096905513580649
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -140,6 +154,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 94a9667a-892c-4e8f-8778-824299a7e05c
     m_ActionName: Controls/Pause[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 075dd52c-ea5c-479b-8adb-66293368dc22
+    m_ActionName: Controls/Dash[/XInputControllerWindows/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Controls
