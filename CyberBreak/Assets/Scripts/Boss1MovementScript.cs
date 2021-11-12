@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
 public class Boss1MovementScript : MonoBehaviour
 {
     [HideInInspector]
