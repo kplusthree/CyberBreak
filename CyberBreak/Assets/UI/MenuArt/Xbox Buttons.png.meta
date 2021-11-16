@@ -1,0 +1,454 @@
+fileFormatVersion: 2
+guid: 89c046299d8ab0f4dba82f233683f063
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5905445849804053847
+    second: Xbox Buttons_0
+  - first:
+      213: -5728596874175450738
+    second: Xbox Buttons_1
+  - first:
+      213: -2384600253170045310
+    second: Xbox Buttons_2
+  - first:
+      213: 3040250529709261443
+    second: Xbox Buttons_3
+  - first:
+      213: -8845593705174531964
+    second: Xbox Buttons_4
+  - first:
+      213: 4313089795541304817
+    second: Xbox Buttons_5
+  - first:
+      213: -3627262410721268545
+    second: Xbox Buttons_6
+  - first:
+      213: -1179199019904003933
+    second: Xbox Buttons_7
+  - first:
+      213: -1011960994811016299
+    second: Xbox Buttons_8
+  - first:
+      213: 4430971836970808196
+    second: Xbox Buttons_9
+  - first:
+      213: -1169377155942402321
+    second: Xbox Buttons_10
+  - first:
+      213: 2064895980387644902
+    second: Xbox Buttons_11
+  - first:
+      213: 365758052265118341
+    second: Xbox Buttons_12
+  - first:
+      213: 3212055475764942286
+    second: Xbox Buttons_13
+  - first:
+      213: -1301509747170285287
+    second: Xbox Buttons_14
+  - first:
+      213: -3891075261412445115
+    second: Xbox Buttons_15
+  - first:
+      213: 5856037089803782557
+    second: Xbox Buttons_16
+  - first:
+      213: 7546169432079210815
+    second: Xbox Buttons_17
+  - first:
+      213: 4431931869313908952
+    second: Xbox Buttons_18
+  - first:
+      213: 5936637828706843148
+    second: Xbox Buttons_19
+  - first:
+      213: 6513047571380886441
+    second: Xbox Buttons_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Xbox Buttons_2
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 330
+        width: 62
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e2e7234b238eed0800000000000000
+      internalID: -2384600253170045310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Buttons_3
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 330
+        width: 62
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3828383bfb3213a20800000000000000
+      internalID: 3040250529709261443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Buttons_5
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 341
+        width: 53
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f50a9b315c2bdb30800000000000000
+      internalID: 4313089795541304817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Buttons_8
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 341
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59b0db936dac4f1f0800000000000000
+      internalID: -1011960994811016299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Buttons_10
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 340
+        width: 89
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe6b89b1ca985cfe0800000000000000
+      internalID: -1169377155942402321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Buttons_11
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 340
+        width: 88
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e5332134fbf7ac10800000000000000
+      internalID: 2064895980387644902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Buttons_14
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 144
+        width: 78
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 919e438d7cb10fde0800000000000000
+      internalID: -1301509747170285287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Buttons_15
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 144
+        width: 78
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54473316aaf100ac0800000000000000
+      internalID: -3891075261412445115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Buttons_16
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 144
+        width: 78
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d994441e4b2d44150800000000000000
+      internalID: 5856037089803782557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Buttons_17
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 144
+        width: 78
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f391efdfd1169b860800000000000000
+      internalID: 7546169432079210815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Buttons_18
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 144
+        width: 78
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d04033cd82618d30800000000000000
+      internalID: 4431931869313908952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Buttons_19
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 144
+        width: 78
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ab73cc6ac236250800000000000000
+      internalID: 5936637828706843148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Xbox Buttons_20
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 144
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9abd061324ef26a50800000000000000
+      internalID: 6513047571380886441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
