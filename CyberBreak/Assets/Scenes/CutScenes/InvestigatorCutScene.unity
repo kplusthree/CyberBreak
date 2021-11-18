@@ -1516,14 +1516,14 @@ MonoBehaviour:
   dialogue:
     name: Evidence Locker
     sentences:
-    - 'Investigator: "Oh, a fresh face. What brings you in to see mwah?"'
-    - 'P: "I was arrested for a fake crime. Vagrancy with intent. I heard you can
-      help clear my name."'
+    - 'Investigator: "Oh, a fresh face. What brings you in to see me?"'
+    - 'John Souls: "I was arrested for a fake crime. Vagrancy with intent. I heard
+      you can help clear my name."'
     - 'Investigator: "Oh? How much do you have?"'
-    - "P: \"Some scrapped-together coin\u2026\""
+    - "John Souls: \"Just some scraped-together coin\u2026\""
     - 'Investigator: "Oh honey that is not nearly enough for me to even think about
       it. Although... I would accept your cybernetic arm as payment."'
-    - 'P: "What? No way!"'
+    - 'John Souls: "Ha. I''m done here."'
     - 'Investigator: "Let me rephrase my statement. You are not leaving this room
       with that arm."'
 --- !u!1 &2127460581
