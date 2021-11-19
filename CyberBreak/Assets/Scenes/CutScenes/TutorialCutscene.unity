@@ -1774,8 +1774,8 @@ MonoBehaviour:
     - 'Aggressive Inmate: That''s not a real crime. What''re you really in for?'
     - "John Souls: That\u2019s what they told me."
     - 'Inmate: Bulllllll. If that''s really why, go see the Investigator. '
-    - "Aggressive  Inmate: Nah no way that fake ass crime is what you\u2019re in
-      for. Stick \u2018em up."
+    - "Aggressive Inmate: Nah no way that fake ass crime is what you\u2019re in for.
+      Stick \u2018em up."
 --- !u!1 &2026140847
 GameObject:
   m_ObjectHideFlags: 0

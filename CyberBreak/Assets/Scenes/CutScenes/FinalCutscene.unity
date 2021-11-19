@@ -713,7 +713,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -9.829224, y: -39.999985}
-  m_SizeDelta: {x: 747.64, y: 239.76}
+  m_SizeDelta: {x: 1200, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &692954932
 GameObject:
@@ -1015,7 +1015,7 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - 'P: "How am I supposed to prove my innocence if nobody will help me?"'
+    - '"How am I supposed to prove my innocence if nobody will help me?"'
     - '"The only way out of here is to take this to the top. "'
     - '"I must take down the warden. "'
     - '"Then I will be free."'
