@@ -52,11 +52,11 @@ public class TutorialBossMovement : MonoBehaviour
 
         if (attack == true)
         {
-            anim.SetInteger("State", 1);
+            //anim.SetInteger("State", 1);
         }
         else
         {
-            anim.SetInteger("State", 0);
+            //anim.SetInteger("State", 0);
             // boss looks at player
             transform.LookAt(target);
             StartCoroutine(SmallAttack());
@@ -73,15 +73,20 @@ public class TutorialBossMovement : MonoBehaviour
     {
         attack = true;
         int attackTimes = 1;
+        
 
         // launch the bullets at the player
         for (int i = 0; i < attackTimes; i++)
         {
-            Launch();
-            yield return new WaitForSeconds(0.5f);
+            anim.SetInteger("State", 1);
+            yield return new WaitForSeconds(1.25f);
+            Launch();  
+            anim.SetInteger("State", 0);
+  
         }
 
         yield return new WaitForSeconds(2.0f);
+       
 
         GameObject[] bossBullets = GameObject.FindGameObjectsWithTag("BossBullet");
 
