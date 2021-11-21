@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     public int lives;
     public GameObject[] hearts;
-    [HideInInspector]
 
     public float timeInvincible = 2.0f;
     bool isInvincible;
@@ -20,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     private TwinStickMovement twinStick;
 
+    private CameraController cam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
         gameOver = false;
         damageSource.clip = damageClip;
         twinStick = GetComponent<TwinStickMovement>();
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
     }
 
     // Update is called once per frame
@@ -64,6 +66,7 @@ public class PlayerController : MonoBehaviour
             invincibleTimer = timeInvincible;
 
             damageSource.Play();
+            cam.shakeDuration = 1f;
             lives = lives - 1;
             Destroy(hearts[lives].gameObject);
             Destroy(collision.gameObject);
