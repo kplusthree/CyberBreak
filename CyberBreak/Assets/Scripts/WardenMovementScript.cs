@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.AI;
 
 public class WardenMovementScript : MonoBehaviour
 {
@@ -17,6 +18,19 @@ public class WardenMovementScript : MonoBehaviour
     public Vector3 pointOne;
     public Vector3 pointTwo;
     public Vector3 pointThree;
+    public Vector3 pointFour;
+    //public Vector3 pointFive;
+
+    [HideInInspector]
+    public bool pointOneCheck;
+    [HideInInspector]
+    public bool pointTwoCheck;
+    [HideInInspector]
+    public bool pointThreeCheck;
+    [HideInInspector]
+    public bool pointFourCheck;
+    //[HideInInspector]
+    //public bool pointFiveCheck;
 
     bool twoThirds;
     bool oneThird;
@@ -49,6 +63,8 @@ public class WardenMovementScript : MonoBehaviour
 
     Animator anim;
 
+    public NavMeshAgent wardenAgent;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +75,7 @@ public class WardenMovementScript : MonoBehaviour
         twoThirds = false;
         oneThird = false;
         speed = 1f;
-        timeBetweenAttacks = 3.5f;
+        timeBetweenAttacks = 2f;
         warden = GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>();
         randNum = 0;
         whichAttack = true;
@@ -72,6 +88,10 @@ public class WardenMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // checks if boss is in the right spot
+        CheckBossPosition();
+
+        // check boss health for change in attacks
         if (warden.currentBossHealth <= 66 && warden.currentBossHealth > 33)
         {
             twoThirds = true;
@@ -86,13 +106,9 @@ public class WardenMovementScript : MonoBehaviour
             deathSource.Play();
         }
 
+        // check for when to do the big attack
         if (attack == false && twoThirds == true)
         {
-            StartCoroutine(BigAttack(degreeFacing));
-        }
-        else if (attack == false && oneThird == true)
-        {
-            speed = 0.5f;
             StartCoroutine(BigAttack(degreeFacing));
         }
         else if (attack == false && whichAttack == true)
@@ -116,6 +132,47 @@ public class WardenMovementScript : MonoBehaviour
         degreeFacing = direction.y;
     }
 
+    void CheckBossPosition()
+    {
+        if (Vector3.Distance(transform.position, pointOne) < 0.5f)
+        {
+            pointOneCheck = true;
+        }
+        else
+        {
+            pointOneCheck = false;
+        }
+
+        if (Vector3.Distance(transform.position, pointTwo) < 0.4f)
+        {
+            pointTwoCheck = true;
+        }
+        else
+        {
+            pointTwoCheck = false;
+        }
+
+        if (Vector3.Distance(transform.position, pointThree) < 0.4f)
+        {
+            pointThreeCheck = true;
+        }
+        else
+        {
+            pointThreeCheck = false;
+        }
+
+        if (Vector3.Distance(transform.position, pointFour) < 0.4f)
+        {
+            pointFourCheck = true;
+        }
+        else
+        {
+            pointFourCheck = false;
+        }
+
+        return;
+    }
+
     // Teleports the boss to one of 3 spots
     IEnumerator ChooseAttack()
     {
@@ -134,7 +191,7 @@ public class WardenMovementScript : MonoBehaviour
         }
         else if (randNum == 2)
         {
-            StartCoroutine(TopAttack(degreeFacing));
+            StartCoroutine(TopAttack());
         }
         else
         {
@@ -164,12 +221,53 @@ public class WardenMovementScript : MonoBehaviour
         yield return null;
     }
 
+    void CheckPlayerLocation()
+    {
+        transform.LookAt(target);
+        rawDirection = transform.rotation;
+        direction = rawDirection.eulerAngles;
+        degreeFacing = direction.y;
+
+        return;
+    }
+
     // Fires rows of bullets from the top of the screen
-    IEnumerator TopAttack(float degreeFacing)
+    IEnumerator TopAttack()
     {
         attack = true;
+
+        wardenAgent.SetDestination(pointOne);
+        yield return new WaitUntil(() => pointOneCheck);
+        yield return new WaitForSeconds(0.5f);
+        CheckPlayerLocation();
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 5));
-        anim.SetInteger("State", 2);
+
+        // wait until attack has finished
+        yield return new WaitUntil(() => tempAttack);
+
+        wardenAgent.SetDestination(pointTwo);
+        yield return new WaitUntil(() => pointTwoCheck);
+        yield return new WaitForSeconds(0.5f);
+        CheckPlayerLocation();
+        StartCoroutine(CreateQuadOfBullets(degreeFacing, 5));
+
+        yield return new WaitUntil(() => tempAttack);
+
+        wardenAgent.SetDestination(pointThree);
+        yield return new WaitUntil(() => pointThreeCheck);
+        yield return new WaitForSeconds(0.51f);
+        CheckPlayerLocation();
+        StartCoroutine(CreateQuadOfBullets(degreeFacing, 5));
+
+        yield return new WaitUntil(() => tempAttack);
+
+        wardenAgent.SetDestination(pointFour);
+        yield return new WaitUntil(() => pointFourCheck);
+        yield return new WaitForSeconds(0.5f);
+        CheckPlayerLocation();
+        StartCoroutine(CreateQuadOfBullets(degreeFacing, 5));
+
+        yield return new WaitUntil(() => tempAttack);
 
         // wait until attack has finished
         yield return new WaitUntil(() => tempAttack);
@@ -183,7 +281,7 @@ public class WardenMovementScript : MonoBehaviour
     {
         attack = true;
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 5));
-        anim.SetInteger("State", 2);
+        //anim.SetInteger("State", 2);
 
         // wait until attack has finished
         yield return new WaitUntil(() => tempAttack);
@@ -296,7 +394,7 @@ public class WardenMovementScript : MonoBehaviour
             bulletSource.Play();
         }
 
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
 
         foreach (GameObject BossBullet in bossBullets)
         {

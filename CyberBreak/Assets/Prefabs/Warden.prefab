@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 699786479218648480}
   - component: {fileID: 4074483882290689474}
   - component: {fileID: 7978198870613121954}
+  - component: {fileID: -7026377919810109758}
   - component: {fileID: -9021762038609919415}
   m_Layer: 0
   m_Name: Warden
@@ -135,6 +136,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!195 &-7026377919810109758
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146543750045471040}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.16015641
+  m_Speed: 5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.32000002
+  m_BaseOffset: 0.16000001
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!114 &-9021762038609919415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +176,11 @@ MonoBehaviour:
   pointOne: {x: 0, y: 0, z: 0}
   pointTwo: {x: 0, y: 0, z: 0}
   pointThree: {x: 0, y: 0, z: 0}
+  pointFour: {x: 0, y: 0, z: 0}
+  pointOneCheck: 0
+  pointTwoCheck: 0
+  pointThreeCheck: 0
+  pointFourCheck: 0
   rawDirection: {x: 0, y: 0, z: 0, w: 0}
   direction: {x: 0, y: 0, z: 0}
   quadrant: 0
@@ -162,6 +190,7 @@ MonoBehaviour:
   bulletSource: {fileID: 0}
   deathSource: {fileID: 0}
   popSource: {fileID: 0}
+  wardenAgent: {fileID: 0}
 --- !u!1 &9118283145493408210
 GameObject:
   m_ObjectHideFlags: 0
