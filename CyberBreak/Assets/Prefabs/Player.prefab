@@ -55,6 +55,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  timeInvincible: 2
   gameOver: 0
   damageClip: {fileID: 8300000, guid: 5fc948c321fc5ae42a9a9744cd6156d0, type: 3}
   deathClip: {fileID: 8300000, guid: 65f2031b59671e74a853e6ed2b46d54e, type: 3}
@@ -80,9 +81,12 @@ MonoBehaviour:
   rotateSmoothing: 1000
   pause: 0
   paused: 0
+  isDashing: 0
   bulletPrefab: {fileID: 4611249451867358970, guid: 957321e24e8757949bcb83b2f898b2a5, type: 3}
   walkClip: {fileID: 8300000, guid: cceba0f63db045d48a327d5110a55ea5, type: 3}
-  bulletClip: {fileID: 8300000, guid: 846ad18370b99bc4e9dd79ace46f57c8, type: 3}
+  bulletClip1: {fileID: 8300000, guid: 846ad18370b99bc4e9dd79ace46f57c8, type: 3}
+  bulletClip2: {fileID: 8300000, guid: eadba6009b27fea44b9d0e6fa2f959e7, type: 3}
+  bulletClip3: {fileID: 8300000, guid: 679cdf8792d046b47b3fbe3f42cab4e4, type: 3}
   walkSource: {fileID: 0}
   bulletSource: {fileID: 0}
 --- !u!136 &8525096905513580649

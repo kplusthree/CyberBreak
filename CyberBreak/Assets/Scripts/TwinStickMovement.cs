@@ -18,6 +18,7 @@ public class TwinStickMovement : MonoBehaviour
     public float shootRate = 0.5f;
     public float controllerDeadzone = 0.1f;
     public float rotateSmoothing = 1000f;
+    int randNum;
 
     private bool attack = false;
     public bool pause = false;
@@ -40,9 +41,13 @@ public class TwinStickMovement : MonoBehaviour
     private PlayerInput playerInput;
 
     public AudioClip walkClip;
-    public AudioClip bulletClip;
+    public AudioClip bulletClip1;
+    public AudioClip bulletClip2;
+    public AudioClip bulletClip3;
     public AudioSource walkSource;
-    public AudioSource bulletSource;
+    public AudioSource bulletSource1;
+    public AudioSource bulletSource2;
+    public AudioSource bulletSource3;
 
     void Awake()
     {
@@ -52,7 +57,9 @@ public class TwinStickMovement : MonoBehaviour
         anim = GetComponent<Animator>();
 
         walkSource.clip = walkClip;
-        bulletSource.clip = bulletClip;
+        bulletSource1.clip = bulletClip1;
+        bulletSource2.clip = bulletClip2;
+        bulletSource3.clip = bulletClip3;
 
         dashLengthTimer = dashLength;
     }
@@ -186,11 +193,25 @@ public class TwinStickMovement : MonoBehaviour
     {
         attack = true;
         GameObject BossBullet = Instantiate(bulletPrefab, transform.position + transform.forward * 2, transform.rotation);
-        //bulletSource.clip = bulletClip;
-        //bulletSource.Play();
         bulletRB = BossBullet.GetComponent<Projectile>().GetComponent<Rigidbody>();
         bulletRB.AddForce(transform.forward * 10, ForceMode.Impulse);
-        bulletSource.Play();
+
+        // create random number between 1 and 3
+        randNum = Random.Range(1, 4);
+        // swap between different bullet sounds
+        if (randNum == 1)
+        {
+            bulletSource1.Play();
+        }
+        else if (randNum == 2)
+        {
+            bulletSource2.Play();
+        }
+        else
+        {
+            bulletSource3.Play();
+        }
+
         yield return new WaitForSeconds(shootRate);
         attack = false;
 
