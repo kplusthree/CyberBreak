@@ -47,13 +47,13 @@ public class gameController : MonoBehaviour
         if (setMusic == false)
         {
 
-            if (scene.name == "EvidenceLocker")
+            if (scene.name == "Courtyard")
             {
-                musicSource.clip = Boss1MusicClip;
+                musicSource.clip = tutorialMusicClip;
             }
             else
             {
-                musicSource.clip = tutorialMusicClip;
+                musicSource.clip = Boss1MusicClip;
             }
 
             musicSource.Play();
