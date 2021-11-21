@@ -134,7 +134,7 @@ public class Boss1MovementScript : MonoBehaviour
         tempTeleport = false;
 
         // create random number between 1 and 3
-        randNum = Random.Range(1, 3);
+        randNum = Random.Range(1, 4);
 
         // don't teleport until time has passed
         yield return new WaitForSeconds(timeBetweenTeleports * speed);
