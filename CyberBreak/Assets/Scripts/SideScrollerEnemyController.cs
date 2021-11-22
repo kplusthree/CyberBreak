@@ -10,11 +10,15 @@ public class SideScrollerEnemyController : MonoBehaviour
     public int maxHealth = 10;
     public bool gameWin;
 
+    public AudioClip deathClip;
+    public AudioSource deathSource;
+
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
         gameWin = false;
+        deathSource.clip = deathClip;
     }
 
     // Update is called once per frame
@@ -34,6 +38,7 @@ public class SideScrollerEnemyController : MonoBehaviour
             //health = health - 5;
             TakeDamage(10);
             Destroy(collision.gameObject);
+            deathSource.Play();
         }
     }
 

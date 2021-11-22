@@ -1,0 +1,98 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class HallwayEnemyMovement : MonoBehaviour
+{
+    [HideInInspector]
+    GameObject playerObj;
+    public GameObject bulletPrefab;
+    private static Rigidbody bulletRB;
+    private Transform target;
+    [HideInInspector]
+    public gameController boss;
+
+    [HideInInspector]
+    public Quaternion rawDirection;
+    [HideInInspector]
+    public Vector3 direction;
+    [HideInInspector]
+    float degreeFacing;
+    [HideInInspector]
+    bool attack;
+
+    public AudioClip bulletClip;
+    public AudioSource bulletSource;
+
+    Animator anim;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        playerObj = GameObject.Find("Player");
+        attack = false;
+        bulletSource.clip = bulletClip;
+        anim = GetComponent<Animator>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // player location
+        target = playerObj.transform;
+
+        if (attack == false)
+        {
+            // boss looks at player
+            transform.LookAt(target);
+            StartCoroutine(SmallAttack());
+        }
+
+        // let's the boss know what quadrant the player is in
+        rawDirection = transform.rotation;
+        direction = rawDirection.eulerAngles;
+        degreeFacing = direction.y;
+    }
+
+    // Fires 3 shots directly at the player
+    IEnumerator SmallAttack()
+    {
+        attack = true;
+        int attackTimes = 1;
+
+
+        // launch the bullets at the player
+        for (int i = 0; i < attackTimes; i++)
+        {
+            anim.SetInteger("State", 1);
+            yield return new WaitForSeconds(1.25f);
+            Launch();
+            anim.SetInteger("State", 0);
+
+        }
+
+        yield return new WaitForSeconds(2.0f);
+
+
+        GameObject[] bossBullets = GameObject.FindGameObjectsWithTag("BossBullet");
+
+        // delete the bullets after
+        foreach (GameObject BossBullet in bossBullets)
+        {
+            Destroy(BossBullet);
+        }
+
+        attack = false;
+    }
+
+    // Fires Bullet
+    void Launch()
+    {
+        GameObject BossBullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+        //bulletSource.clip = bulletClip;
+        //bulletSource.Play();
+        bulletRB = BossBullet.GetComponent<Projectile>().GetComponent<Rigidbody>();
+        bulletRB.AddForce(transform.forward * 10, ForceMode.Impulse);
+        bulletSource.Play();
+    }
+}

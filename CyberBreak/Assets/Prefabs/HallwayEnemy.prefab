@@ -51,7 +51,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &644049271
+--- !u!114 &-7324211187906234695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,17 +60,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1700399261862404995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c305953900e4e6b4bac097afd1b17f8c, type: 3}
+  m_Script: {fileID: 11500000, guid: d6de2e53d8bfad146ac61d8cf5a05fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4611249451867358970, guid: 83a617f86d92472439ccd4baebcc30c3, type: 3}
   boss: {fileID: 0}
   rawDirection: {x: 0, y: 0, z: 0, w: 0}
   direction: {x: 0, y: 0, z: 0}
-  bulletClip: {fileID: 8300000, guid: 4cedbd69133caa7439a39c16071a6e2f, type: 3}
-  deathClip: {fileID: 8300000, guid: c6f964285e85bcb46b81a1a03419ec70, type: 3}
+  bulletClip: {fileID: 8300000, guid: 4d49c58adae3cc845a0eb01e1d644e38, type: 3}
   bulletSource: {fileID: 0}
-  deathSource: {fileID: 0}
 --- !u!114 &996642160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,6 +84,8 @@ MonoBehaviour:
   health: 0
   maxHealth: 10
   gameWin: 0
+  deathClip: {fileID: 8300000, guid: c6f964285e85bcb46b81a1a03419ec70, type: 3}
+  deathSource: {fileID: 0}
 --- !u!212 &7194153528835516110
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -716,6 +716,71 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b828b7b1fafcb2749b963e2d23f55978, type: 3}
+--- !u!1001 &330772806
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -7324211187906234695, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: bulletSource
+      value: 
+      objectReference: {fileID: 1194570412}
+    - target: {fileID: 996642160, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: deathSource
+      value: 
+      objectReference: {fileID: 1117737146}
+    - target: {fileID: 1700399261862404995, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_Name
+      value: HallwayEnemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_RootOrder
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
 --- !u!4 &334350612 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4216834390411183023, guid: 985738273006123479d015477bdd172a, type: 3}
@@ -2052,21 +2117,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 644049271, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+    - target: {fileID: -7324211187906234695, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
       propertyPath: bulletSource
       value: 
       objectReference: {fileID: 1194570412}
-    - target: {fileID: 644049271, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+    - target: {fileID: 996642160, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
       propertyPath: deathSource
       value: 
       objectReference: {fileID: 1117737146}
     - target: {fileID: 1700399261862404995, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
       propertyPath: m_Name
-      value: HallwayEnemy (1)
+      value: HallwayEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.38
+      value: -29.13
       objectReference: {fileID: 0}
     - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2836,71 +2901,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
---- !u!1001 &1247787361
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 644049271, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
-      propertyPath: bulletSource
-      value: 
-      objectReference: {fileID: 1194570412}
-    - target: {fileID: 644049271, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
-      propertyPath: deathSource
-      value: 
-      objectReference: {fileID: 1117737146}
-    - target: {fileID: 1700399261862404995, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
-      propertyPath: m_Name
-      value: HallwayEnemy (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 32.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 14.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
-      propertyPath: m_RootOrder
-      value: 47
-      objectReference: {fileID: 0}
-    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
 --- !u!1 &1286135255
 GameObject:
   m_ObjectHideFlags: 0
@@ -4138,6 +4138,71 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a7521a0ba559d44fb281738bc6602fa, type: 3}
+--- !u!1001 &2055878176
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -7324211187906234695, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: bulletSource
+      value: 
+      objectReference: {fileID: 1194570412}
+    - target: {fileID: 996642160, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: deathSource
+      value: 
+      objectReference: {fileID: 1117737146}
+    - target: {fileID: 1700399261862404995, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_Name
+      value: HallwayEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_RootOrder
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517884768015802298, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
 --- !u!1 &2090824916
 GameObject:
   m_ObjectHideFlags: 0
@@ -4433,14 +4498,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 644049271, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
-      propertyPath: bulletSource
-      value: 
-      objectReference: {fileID: 1194570412}
-    - target: {fileID: 644049271, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
-      propertyPath: deathSource
-      value: 
-      objectReference: {fileID: 1117737146}
     - target: {fileID: 1700399261862404995, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
       propertyPath: m_Name
       value: HallwayEnemy
