@@ -29,7 +29,7 @@ public class WardenMovementScript : MonoBehaviour
     public bool pointThreeCheck;
     [HideInInspector]
     public bool pointFourCheck;
-    //[HideInInspector]
+    [HideInInspector]
     //public bool pointFiveCheck;
 
     bool twoThirds;
@@ -44,7 +44,7 @@ public class WardenMovementScript : MonoBehaviour
     public Vector3 direction;
     [HideInInspector]
     float degreeFacing;
-    [HideInInspector]
+    //[HideInInspector]
     bool attack;
     [HideInInspector]
     bool tempAttack;
@@ -64,6 +64,9 @@ public class WardenMovementScript : MonoBehaviour
     Animator anim;
 
     public NavMeshAgent wardenAgent;
+
+    //Flag to check if the boss has used their big attack
+    bool hasEverUsedBigAttack = false;
 
     // Start is called before the first frame update
     void Start()
@@ -88,6 +91,21 @@ public class WardenMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // player location. moved to beginning of update to make sure things that use this info have the right info.
+        target = playerObj.transform;
+
+        if (attack == false)
+        {
+            anim.SetInteger("State", 0);
+            // boss looks at player
+            transform.LookAt(target);
+        }
+
+        // let's the boss know what quadrant the player is in
+        rawDirection = transform.rotation;
+        direction = rawDirection.eulerAngles;
+        degreeFacing = direction.y;
+
         // checks if boss is in the right spot
         CheckBossPosition();
 
@@ -106,30 +124,28 @@ public class WardenMovementScript : MonoBehaviour
             deathSource.Play();
         }
 
-        // check for when to do the big attack
-        if (attack == false && twoThirds == true)
-        {
-            StartCoroutine(BigAttack(degreeFacing));
-        }
-        else if (attack == false && whichAttack == true)
-        {
-            StartCoroutine(ChooseAttack());
-        }
-
-        // player location
-        target = playerObj.transform;
-
+        // check for when we need to attack
         if (attack == false)
-        {
-            anim.SetInteger("State", 0);
-            // boss looks at player
-            transform.LookAt(target);
+        {               
+            // check if we're under 2/3rds hp   
+            if (twoThirds == true){
+                //if we've used big attack, then choose another attack.
+                if (hasEverUsedBigAttack == true){
+                    if (whichAttack == true){ //just makes sure we need to pick attack
+                        StartCoroutine(ChooseAttack());
+                    }
+                }
+                else if (hasEverUsedBigAttack == false) {
+                    StartCoroutine(BigAttack(degreeFacing));
+                    hasEverUsedBigAttack = true; // check if we've used big attack, and if not, make sure we do, and set that we used it
+                }
+            }
+            else if (twoThirds == false){ //otherwise, just choose an attack if we need to.
+                if (whichAttack == true){
+                    StartCoroutine(ChooseAttack());
+                }
+            }         
         }
-
-        // let's the boss know what quadrant the player is in
-        rawDirection = transform.rotation;
-        direction = rawDirection.eulerAngles;
-        degreeFacing = direction.y;
     }
 
     void CheckBossPosition()
@@ -294,16 +310,20 @@ public class WardenMovementScript : MonoBehaviour
     {
         attack = true;
         transform.position = middleOfRoom;
+        wardenAgent.SetDestination(middleOfRoom); //set nav mesh destination to middle of room, so nav mesh isnt fighting our forced position
         anim.SetInteger("State", 3);
-
+        yield return null;
+        StartCoroutine(CreateQuadOfBullets(degreeFacing, 5)); // make sure we actually attack with this
+        
         if (oneThird == true)
         {
-            oneThird = false;
+            //oneThird = false;
         }
         if (twoThirds == true)
         {
-            twoThirds = false;
-        }
+            //twoThirds = false;
+        } //this gets updated frame in update, no need to change here
+        
 
         // wait until attack has finished
         yield return new WaitUntil(() => tempAttack);
@@ -393,7 +413,8 @@ public class WardenMovementScript : MonoBehaviour
             bulletRB.AddForce(BossBullet.transform.forward * 10, ForceMode.Impulse);
             bulletSource.Play();
         }
-
+        //moved this to before the wait so boss has less downtime
+        tempAttack = true;
         yield return new WaitForSeconds(2.0f);
 
         foreach (GameObject BossBullet in bossBullets)
@@ -401,7 +422,7 @@ public class WardenMovementScript : MonoBehaviour
             Destroy(BossBullet);
         }
 
-        tempAttack = true;
+        //tempAttack = true;
 
         yield return null;
     }
