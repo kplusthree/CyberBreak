@@ -109,6 +109,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -943896151558028692, guid: 6a4c14da16f78264fa5bc476705ed52b, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5936861340954928100, guid: 531602d3a0bd3be4c9702c53fcef2346, type: 3}
     - target: {fileID: 32167913135722023, guid: 6a4c14da16f78264fa5bc476705ed52b, type: 3}
       propertyPath: m_Name
       value: BossHealthBar
