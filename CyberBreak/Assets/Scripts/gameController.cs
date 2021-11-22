@@ -78,7 +78,7 @@ public class gameController : MonoBehaviour
             {
                 Debug.Log("you win!");
                 endLevel = true;
-                SceneManager.LoadScene("InvestigatorCutscene");
+                SceneManager.LoadScene("HallwayOne");
             }
             else if (boss.gameWin == true && scene.name == "EvidenceLocker")
             {
