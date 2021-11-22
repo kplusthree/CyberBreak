@@ -136,7 +136,7 @@ public class Boss1MovementScript : MonoBehaviour
         tempTeleport = false;
         teleporting = true;
         anim.SetInteger("State", 4);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1f * speed);
         teleporting = false;
 
         // create random number between 1 and 3
