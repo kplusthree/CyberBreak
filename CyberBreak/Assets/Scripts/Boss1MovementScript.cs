@@ -38,6 +38,8 @@ public class Boss1MovementScript : MonoBehaviour
     [HideInInspector]
     bool tempTeleport;
     [HideInInspector]
+    bool teleporting;
+    [HideInInspector]
     bool whichAttack;
 
     [HideInInspector]
@@ -67,6 +69,7 @@ public class Boss1MovementScript : MonoBehaviour
         boss = GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>();
         randNum = 0;
         tempTeleport = true;
+        teleporting = false;
         whichAttack = true;
         bulletSource.clip = bulletClip;
         deathSource.clip = deathClip;
@@ -114,7 +117,7 @@ public class Boss1MovementScript : MonoBehaviour
         // player location
         target = playerObj.transform;
 
-        if (attack == false && tempTeleport == false)
+        if (attack == false && tempTeleport == false && teleporting == false)
         {
             anim.SetInteger("State", 0);
             // boss looks at player
@@ -130,9 +133,11 @@ public class Boss1MovementScript : MonoBehaviour
     // Teleports the boss to one of 3 spots
     IEnumerator Teleport()
     {
+        tempTeleport = false;
+        teleporting = true;
         anim.SetInteger("State", 4);
         yield return new WaitForSeconds(1f);
-        tempTeleport = false;
+        teleporting = false;
 
         // create random number between 1 and 3
         randNum = Random.Range(1, 4);
