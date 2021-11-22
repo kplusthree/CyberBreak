@@ -594,7 +594,7 @@ PrefabInstance:
     - target: {fileID: -9021762038609919415, guid: 78da41a2219a4ab48ae65527d622df0b, type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: 4611249451867358970, guid: 83a617f86d92472439ccd4baebcc30c3, type: 3}
+      objectReference: {fileID: 5965639400353514118, guid: de8a7391ed82f9f44bd0eaec37dc67ab, type: 3}
     - target: {fileID: -9021762038609919415, guid: 78da41a2219a4ab48ae65527d622df0b, type: 3}
       propertyPath: middleOfRoom.y
       value: 1.75
@@ -2546,8 +2546,8 @@ MonoBehaviour:
   LinearWhitePoint: 11.2
   ApplyDithering: 0
   QualityLevel: 1
-  BlendAmount: 0
-  LutTexture: {fileID: 0}
+  BlendAmount: 0.8
+  LutTexture: {fileID: 2800000, guid: bb3eefaffac30f84ba7b9771ed2eb6f4, type: 3}
   LutBlendTexture: {fileID: 0}
   MaskTexture: {fileID: 0}
   UseDepthMask: 0
@@ -2583,7 +2583,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   EffectFlags:
     components: []
-  sharedInstanceID: 6e61c207-93c9-4d56-88f8-897ad87396f3
+  sharedInstanceID: cc800c41-17b0-4634-bcc0-3c1278293671
 --- !u!1 &697991126
 GameObject:
   m_ObjectHideFlags: 0
