@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2243059d47b9d42a8aa2749ebd6423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 1095163726543149936, guid: 003185eac4893e84a9daa29bc705a0dc, type: 3}
   boss: {fileID: 0}
   middleOfRoom: {x: 0, y: 0, z: 0}
   pointOne: {x: 0, y: 0, z: 0}
