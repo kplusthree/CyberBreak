@@ -649,7 +649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -9021762038609919415, guid: 78da41a2219a4ab48ae65527d622df0b, type: 3}
       propertyPath: pointOne.z
-      value: 5
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: -9021762038609919415, guid: 78da41a2219a4ab48ae65527d622df0b, type: 3}
       propertyPath: pointTwo.x
@@ -657,7 +657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -9021762038609919415, guid: 78da41a2219a4ab48ae65527d622df0b, type: 3}
       propertyPath: pointTwo.z
-      value: 5
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: -9021762038609919415, guid: 78da41a2219a4ab48ae65527d622df0b, type: 3}
       propertyPath: pointThree.x
@@ -665,7 +665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -9021762038609919415, guid: 78da41a2219a4ab48ae65527d622df0b, type: 3}
       propertyPath: pointThree.z
-      value: 5
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: -9021762038609919415, guid: 78da41a2219a4ab48ae65527d622df0b, type: 3}
       propertyPath: pointFour.x
@@ -673,7 +673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -9021762038609919415, guid: 78da41a2219a4ab48ae65527d622df0b, type: 3}
       propertyPath: pointFour.z
-      value: 5
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: -9021762038609919415, guid: 78da41a2219a4ab48ae65527d622df0b, type: 3}
       propertyPath: middleOfRoom.x
