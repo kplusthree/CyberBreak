@@ -2255,6 +2255,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 790838865923972065, guid: af03b10f9dad6f744b5b5e8bccfd9c81, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0dec7404367386c4ebaac2f5868c8e2e, type: 2}
     - target: {fileID: 5758725713633366275, guid: af03b10f9dad6f744b5b5e8bccfd9c81, type: 3}
       propertyPath: m_Name
       value: TutorialBoss Variant
@@ -3942,6 +3946,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 790838865923972065, guid: af03b10f9dad6f744b5b5e8bccfd9c81, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0dec7404367386c4ebaac2f5868c8e2e, type: 2}
     - target: {fileID: 5758725713633366275, guid: af03b10f9dad6f744b5b5e8bccfd9c81, type: 3}
       propertyPath: m_Name
       value: TutorialBoss Variant (1)
@@ -4240,6 +4248,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 790838865923972065, guid: af03b10f9dad6f744b5b5e8bccfd9c81, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0dec7404367386c4ebaac2f5868c8e2e, type: 2}
     - target: {fileID: 5758725713633366275, guid: af03b10f9dad6f744b5b5e8bccfd9c81, type: 3}
       propertyPath: m_Name
       value: TutorialBoss Variant (2)
