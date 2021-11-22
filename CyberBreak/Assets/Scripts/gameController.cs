@@ -84,7 +84,13 @@ public class gameController : MonoBehaviour
             {
                 Debug.Log("you win!");
                 endLevel = true;
-                SceneManager.LoadScene("FinalCutscene");
+                SceneManager.LoadScene("WardenCutScene");
+            }
+            else if (boss.gameWin == true && scene.name == "WardensOffice")
+            {
+                Debug.Log("you win!");
+                endLevel = true;
+                SceneManager.LoadScene("YouWin");
             }
             else if (player.gameOver == true)
             {
