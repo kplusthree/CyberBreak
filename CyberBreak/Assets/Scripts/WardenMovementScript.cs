@@ -46,6 +46,7 @@ public class WardenMovementScript : MonoBehaviour
     float degreeFacing;
     //[HideInInspector]
     bool attack;
+    bool idleWhileMoving;
     [HideInInspector]
     bool tempAttack;
     [HideInInspector]
@@ -75,6 +76,7 @@ public class WardenMovementScript : MonoBehaviour
         degreeFacing = 0;
         quadrant = 0;
         attack = false;
+        idleWhileMoving = false;
         twoThirds = false;
         oneThird = false;
         speed = 1f;
@@ -99,6 +101,11 @@ public class WardenMovementScript : MonoBehaviour
             anim.SetInteger("State", 0);
             // boss looks at player
             transform.LookAt(target);
+        }
+
+        if (idleWhileMoving == true)
+        {
+            anim.SetInteger("State", 0);
         }
 
         // let's the boss know what quadrant the player is in
@@ -252,35 +259,47 @@ public class WardenMovementScript : MonoBehaviour
     {
         attack = true;
 
+        idleWhileMoving = true;
         wardenAgent.SetDestination(pointOne);
         yield return new WaitUntil(() => pointOneCheck);
         yield return new WaitForSeconds(0.5f);
         CheckPlayerLocation();
+        idleWhileMoving = false;
+        anim.SetInteger("State", 2);
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 5));
 
         // wait until attack has finished
         yield return new WaitUntil(() => tempAttack);
 
+        idleWhileMoving = true;
         wardenAgent.SetDestination(pointTwo);
         yield return new WaitUntil(() => pointTwoCheck);
         yield return new WaitForSeconds(0.5f);
         CheckPlayerLocation();
+        idleWhileMoving = false;
+        anim.SetInteger("State", 2);
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 5));
 
         yield return new WaitUntil(() => tempAttack);
 
+        idleWhileMoving = true;
         wardenAgent.SetDestination(pointThree);
         yield return new WaitUntil(() => pointThreeCheck);
         yield return new WaitForSeconds(0.51f);
         CheckPlayerLocation();
+        idleWhileMoving = false;
+        anim.SetInteger("State", 2);
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 5));
 
         yield return new WaitUntil(() => tempAttack);
 
+        idleWhileMoving = true;
         wardenAgent.SetDestination(pointFour);
         yield return new WaitUntil(() => pointFourCheck);
         yield return new WaitForSeconds(0.5f);
         CheckPlayerLocation();
+        idleWhileMoving = false;
+        anim.SetInteger("State", 2);
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 5));
 
         yield return new WaitUntil(() => tempAttack);
@@ -311,7 +330,7 @@ public class WardenMovementScript : MonoBehaviour
         attack = true;
         transform.position = middleOfRoom;
         wardenAgent.SetDestination(middleOfRoom); //set nav mesh destination to middle of room, so nav mesh isnt fighting our forced position
-        anim.SetInteger("State", 3);
+        //anim.SetInteger("State", 3);
         yield return null;
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 5)); // make sure we actually attack with this
         

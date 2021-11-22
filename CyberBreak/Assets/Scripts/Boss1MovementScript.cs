@@ -131,6 +131,7 @@ public class Boss1MovementScript : MonoBehaviour
     IEnumerator Teleport()
     {
         anim.SetInteger("State", 4);
+        yield return new WaitForSeconds(1f);
         tempTeleport = false;
 
         // create random number between 1 and 3
@@ -264,7 +265,7 @@ public class Boss1MovementScript : MonoBehaviour
     {
         attack = true;
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 1, 0, false));
-        anim.SetInteger("State", 3);
+        anim.SetInteger("State", 2);
 
         // wait until attack has finished
         yield return new WaitUntil(() => tempAttack);
@@ -314,7 +315,7 @@ public class Boss1MovementScript : MonoBehaviour
         attack = true;
         quadrant = Quadrant(degreeFacing);
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 1, quadrant, true));
-        anim.SetInteger("State", 2);
+        anim.SetInteger("State", 3);
 
         // wait until attack has finished
         yield return new WaitUntil(() => tempAttack);
