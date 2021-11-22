@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1aa84aca9ef9d44e81c3ffec1cfe8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 5965639400353514118, guid: de8a7391ed82f9f44bd0eaec37dc67ab, type: 3}
   warden: {fileID: 0}
   middleOfRoom: {x: 0, y: 0, z: 0}
   pointOne: {x: 0, y: 0, z: 0}
