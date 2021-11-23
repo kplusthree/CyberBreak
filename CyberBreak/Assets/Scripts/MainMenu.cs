@@ -25,4 +25,15 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(KeepData.keepLevelName, LoadSceneMode.Single);
     }
+
+    public void LevelOne()
+    {
+        SceneManager.LoadScene("EvidenceLocker");
+    }
+
+    public void LevelTwo()
+    {
+        SceneManager.LoadScene("WardensOffice");
+    }
+
 }
