@@ -28,6 +28,7 @@ public class gameController : MonoBehaviour
     {
         boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossController>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        KeepData.keepLevelName = SceneManager.GetActiveScene().name;
         currentPlayerLives = player.lives;
         previousLivesAmount = currentPlayerLives;
         currentBossHealth = boss.health;

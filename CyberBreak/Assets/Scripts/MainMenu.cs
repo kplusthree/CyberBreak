@@ -20,4 +20,9 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
         Debug.Log("Quit!");
     }
+
+    public void LevelRestart()
+    {
+        SceneManager.LoadScene(KeepData.keepLevelName, LoadSceneMode.Single);
+    }
 }
