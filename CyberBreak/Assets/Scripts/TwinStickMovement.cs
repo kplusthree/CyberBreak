@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class TwinStickMovement : MonoBehaviour
 {
+    Scene scene;
+
     public float playerSpeed = 5f;
     public float dashSpeed = 30f;
     public float dashLength = 0.2f;
@@ -51,6 +53,7 @@ public class TwinStickMovement : MonoBehaviour
 
     void Awake()
     {
+        scene = SceneManager.GetActiveScene();
         controller = GetComponent<CharacterController>();
         playerControls = new PlayerControls();
         playerInput = GetComponent<PlayerInput>();
@@ -151,7 +154,7 @@ public class TwinStickMovement : MonoBehaviour
                 Quaternion newrotation = Quaternion.LookRotation(playerDirection, Vector3.up);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, newrotation, rotateSmoothing * Time.deltaTime);
                 // shoots when direction is turned
-                if (attack == false)
+                if (attack == false && scene.name != "JailCell")
                 {
                     // launch the bullets from the player
                     StartCoroutine(Launch());

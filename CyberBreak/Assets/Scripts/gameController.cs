@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class gameController : MonoBehaviour
 {
+    Scene scene;
+
     private bool endLevel;
     [HideInInspector]
     public PlayerController player;
@@ -26,6 +28,7 @@ public class gameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scene = SceneManager.GetActiveScene();
         boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossController>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         KeepData.keepLevelName = SceneManager.GetActiveScene().name;
@@ -40,8 +43,6 @@ public class gameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Scene scene = SceneManager.GetActiveScene();
-
         currentPlayerLives = player.lives;
         currentBossHealth = boss.health;
 
