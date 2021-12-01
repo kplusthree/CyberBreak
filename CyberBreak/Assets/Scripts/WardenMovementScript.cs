@@ -9,18 +9,31 @@ public class WardenMovementScript : MonoBehaviour
     [HideInInspector]
     GameObject playerObj;
     public GameObject bulletPrefab;
+    public GameObject clonePrefab;
     private static Rigidbody bulletRB;
     private Transform target;
     [HideInInspector]
     public gameController warden;
 
     public Vector3 middleOfRoom;
+    public Vector3 cloneSummon;
     public Vector3 pointOne;
     public Vector3 pointTwo;
     public Vector3 pointThree;
     public Vector3 pointFour;
-    //public Vector3 pointFive;
+    public Vector3 cloneOnePos;
+    public Vector3 cloneTwoPos;
+    public Vector3 cloneThreePos;
+    public Vector3 cloneFourPos;
+    public Vector3 cloneOnePosTwo;
+    public Vector3 cloneTwoPosTwo;
+    public Vector3 cloneThreePosTwo;
+    public Vector3 cloneFourPosTwo;
 
+    [HideInInspector]
+    public bool middleCheck;
+    [HideInInspector]
+    public bool cloneCheck;
     [HideInInspector]
     public bool pointOneCheck;
     [HideInInspector]
@@ -29,8 +42,6 @@ public class WardenMovementScript : MonoBehaviour
     public bool pointThreeCheck;
     [HideInInspector]
     public bool pointFourCheck;
-    [HideInInspector]
-    //public bool pointFiveCheck;
 
     bool twoThirds;
     bool oneThird;
@@ -65,6 +76,23 @@ public class WardenMovementScript : MonoBehaviour
     Animator anim;
 
     public NavMeshAgent wardenAgent;
+
+    [HideInInspector]
+    GameObject cloneOneRef;
+    [HideInInspector]
+    public WardenCloneMovement cloneOne;
+    [HideInInspector]
+    GameObject cloneTwoRef;
+    [HideInInspector]
+    public WardenCloneMovement cloneTwo;
+    [HideInInspector]
+    GameObject cloneThreeRef;
+    [HideInInspector]
+    public WardenCloneMovement cloneThree;
+    [HideInInspector]
+    GameObject cloneFourRef;
+    [HideInInspector]
+    public WardenCloneMovement cloneFour;
 
     //Flag to check if the boss has used their big attack
     bool hasEverUsedBigAttack = false;
@@ -157,6 +185,23 @@ public class WardenMovementScript : MonoBehaviour
 
     void CheckBossPosition()
     {
+        if (Vector3.Distance(transform.position, middleOfRoom) < 0.5f)
+        {
+            middleCheck = true;
+        }
+        else
+        {
+            middleCheck = false;
+        }
+        if (Vector3.Distance(transform.position, cloneSummon) < 0.5f)
+        {
+            cloneCheck = true;
+        }
+        else
+        {
+            cloneCheck = false;
+        }
+
         if (Vector3.Distance(transform.position, pointOne) < 0.5f)
         {
             pointOneCheck = true;
@@ -196,13 +241,13 @@ public class WardenMovementScript : MonoBehaviour
         return;
     }
 
-    // Teleports the boss to one of 3 spots
+    // Cycles between boss's attacks
     IEnumerator ChooseAttack()
     {
         whichAttack = false;
 
         // create random number between 1 and 3
-        randNum = Random.Range(1, 3);
+        randNum = Random.Range(1, 4);
 
         // don't teleport until time has passed
         yield return new WaitForSeconds(timeBetweenAttacks * speed);
@@ -218,7 +263,7 @@ public class WardenMovementScript : MonoBehaviour
         }
         else
         {
-            StartCoroutine(UpDownAttack(degreeFacing));
+            StartCoroutine(UpDownAttack());
         }
 
         // wait until any attacks have finished
@@ -311,11 +356,74 @@ public class WardenMovementScript : MonoBehaviour
         yield return null;
     }
 
-    // Fires rows of bullets from the top and bottom of the screen
-    IEnumerator UpDownAttack(float degreeFacing)
+    // Creates clone to fire rows of bullets from the top and bottom of the screen
+    IEnumerator UpDownAttack()
     {
         attack = true;
+
+        wardenAgent.SetDestination(cloneSummon);
+        yield return new WaitUntil(() => cloneCheck);
+        yield return new WaitForSeconds(0.5f);
+
+        // summon clones
+        cloneOneRef = Instantiate(clonePrefab, cloneSummon, transform.rotation);
+        cloneOne = cloneOneRef.GetComponent<WardenCloneMovement>();
+        cloneOne.spawnLocation = cloneOnePos;
+        cloneTwoRef = Instantiate(clonePrefab, cloneSummon, transform.rotation);
+        cloneTwo = cloneTwoRef.GetComponent<WardenCloneMovement>();
+        cloneTwo.spawnLocation = cloneTwoPos;
+        cloneThreeRef = Instantiate(clonePrefab, cloneSummon, transform.rotation);
+        cloneThree = cloneThreeRef.GetComponent<WardenCloneMovement>();
+        cloneThree.spawnLocation = cloneThreePos;
+        cloneFourRef = Instantiate(clonePrefab, cloneSummon, transform.rotation);
+        cloneFour = cloneFourRef.GetComponent<WardenCloneMovement>();
+        cloneFour.spawnLocation = cloneFourPos;
+
+        // move clones to first positions
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(cloneOne.GoToPosition());
+        StartCoroutine(cloneTwo.GoToPosition());
+        StartCoroutine(cloneThree.GoToPosition());
+        StartCoroutine(cloneFour.GoToPosition());
+        //yield return new WaitForSeconds(3f);
+        yield return new WaitUntil(() => cloneOne.inFirstPosition);
+        yield return new WaitUntil(() => cloneTwo.inFirstPosition);
+        yield return new WaitUntil(() => cloneThree.inFirstPosition);
+        yield return new WaitUntil(() => cloneFour.inFirstPosition);
+        yield return new WaitForSeconds(1f);
+
+        // move to attack positions
+        cloneOne.attackLocation = cloneOnePosTwo;
+        cloneTwo.attackLocation = cloneTwoPosTwo;
+        cloneThree.attackLocation = cloneThreePosTwo;
+        cloneFour.attackLocation = cloneFourPosTwo;
+        StartCoroutine(cloneOne.GoToAttackPosition());
+        StartCoroutine(cloneTwo.GoToAttackPosition());
+        StartCoroutine(cloneThree.GoToAttackPosition());
+        StartCoroutine(cloneFour.GoToAttackPosition());
+        yield return new WaitUntil(() => cloneOne.inSecondPosition);
+        yield return new WaitUntil(() => cloneTwo.inSecondPosition);
+        yield return new WaitUntil(() => cloneThree.inSecondPosition);
+        yield return new WaitUntil(() => cloneFour.inSecondPosition);
+        yield return new WaitForSeconds(1f);
+
+        // clones attack
+        StartCoroutine(cloneOne.Shoot());
+        StartCoroutine(cloneTwo.Shoot());
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 5));
+        StartCoroutine(cloneThree.Shoot());
+        StartCoroutine(cloneFour.Shoot());
+        yield return new WaitUntil(() => cloneOne.attack == false);
+        yield return new WaitUntil(() => cloneTwo.attack == false);
+        yield return new WaitUntil(() => cloneThree.attack == false);
+        yield return new WaitUntil(() => cloneFour.attack == false);
+
+        // destroy clones
+        Destroy(cloneOneRef);
+        Destroy(cloneTwoRef);
+        Destroy(cloneThreeRef);
+        Destroy(cloneFourRef);
+
         //anim.SetInteger("State", 2);
 
         // wait until attack has finished
@@ -332,7 +440,7 @@ public class WardenMovementScript : MonoBehaviour
         wardenAgent.SetDestination(middleOfRoom); //set nav mesh destination to middle of room, so nav mesh isnt fighting our forced position
         //anim.SetInteger("State", 3);
         yield return null;
-        StartCoroutine(CreateQuadOfBullets(degreeFacing, 5)); // make sure we actually attack with this
+        StartCoroutine(CreateQuadOfBullets(degreeFacing, 5));
         
         if (oneThird == true)
         {
@@ -429,7 +537,7 @@ public class WardenMovementScript : MonoBehaviour
         foreach (GameObject BossBullet in bossBullets)
         {
             bulletRB = BossBullet.GetComponent<Projectile>().GetComponent<Rigidbody>();
-            bulletRB.AddForce(BossBullet.transform.forward * 10, ForceMode.Impulse);
+            bulletRB.AddForce(BossBullet.transform.forward * 20, ForceMode.Impulse);
             bulletSource.Play();
         }
         //moved this to before the wait so boss has less downtime

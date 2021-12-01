@@ -7,6 +7,8 @@ TagManager:
   - BossBullet
   - PlayerBullet
   - Boss
+  - BulletSource
+  - PopSource
   layers:
   - Default
   - TransparentFX
