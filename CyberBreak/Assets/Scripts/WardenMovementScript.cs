@@ -247,7 +247,7 @@ public class WardenMovementScript : MonoBehaviour
         whichAttack = false;
 
         // create random number between 1 and 3
-        randNum = Random.Range(1, 4);
+        randNum = Random.Range(3, 4);
 
         // don't teleport until time has passed
         yield return new WaitForSeconds(timeBetweenAttacks * speed);
@@ -385,7 +385,6 @@ public class WardenMovementScript : MonoBehaviour
         StartCoroutine(cloneTwo.GoToPosition());
         StartCoroutine(cloneThree.GoToPosition());
         StartCoroutine(cloneFour.GoToPosition());
-        //yield return new WaitForSeconds(3f);
         yield return new WaitUntil(() => cloneOne.inFirstPosition);
         yield return new WaitUntil(() => cloneTwo.inFirstPosition);
         yield return new WaitUntil(() => cloneThree.inFirstPosition);
