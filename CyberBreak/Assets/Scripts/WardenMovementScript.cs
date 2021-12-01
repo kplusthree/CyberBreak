@@ -247,7 +247,7 @@ public class WardenMovementScript : MonoBehaviour
         whichAttack = false;
 
         // create random number between 1 and 3
-        randNum = Random.Range(3, 4);
+        randNum = Random.Range(1, 4);
 
         // don't teleport until time has passed
         yield return new WaitForSeconds(timeBetweenAttacks * speed);
