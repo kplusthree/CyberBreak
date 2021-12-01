@@ -11,6 +11,7 @@ public class BossController : MonoBehaviour
     public bool gameWin;
 
     public HealthBar healthBar;
+    //public GameObject floatingText;
 
 
     // Start is called before the first frame update
@@ -24,7 +25,12 @@ public class BossController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
+        //if (health == 50)
+        //{
+        //    floatingText.SetActive(true);
+        //}
+
+         if (health <= 0)
         {
             gameWin = true;
             Destroy(gameObject);
