@@ -817,7 +817,7 @@ RectTransform:
   m_GameObject: {fileID: 854231208}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8501, y: 1, z: 1}
+  m_LocalScale: {x: 1.5279237, y: 0.82586, z: 0.82586}
   m_Children:
   - {fileID: 613302058}
   - {fileID: 675505478}
@@ -827,7 +827,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -263}
+  m_AnchoredPosition: {x: 0, y: -312}
   m_SizeDelta: {x: 931.39, y: 520.071}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &854231210
@@ -1015,10 +1015,9 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - '"How am I supposed to prove my innocence if nobody will help me?"'
-    - '"The only way out of here is to take this to the top. "'
-    - '"I must take down the warden. "'
-    - '"Then I will be free."'
+    - 'I managed to escape with my life. But that was just the beginning. I need
+      to find out who was responsible for sending that truck to the encampment, and
+      bring them to justice. '
 --- !u!1 &1255446978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,14 +1329,14 @@ RectTransform:
   m_GameObject: {fileID: 2049701932}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.0789, y: 1.9504786, z: 1}
+  m_LocalScale: {x: 2.387201, y: 2.2397346, z: 1.1483}
   m_Children: []
   m_Father: {fileID: 1937388462}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 398, y: 624}
+  m_AnchoredPosition: {x: 376, y: 586}
   m_SizeDelta: {x: 237.19379, y: 376.17767}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2049701934
