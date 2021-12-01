@@ -41,6 +41,7 @@ public class Boss1MovementScript : MonoBehaviour
     bool teleporting;
     [HideInInspector]
     bool whichAttack;
+    bool hasEverUsedBigAttack = false;
 
     [HideInInspector]
     public int quadrant;
@@ -99,20 +100,50 @@ public class Boss1MovementScript : MonoBehaviour
             StartCoroutine(Teleport());
         }
 
-        if (attack == false && twoThirds == true)
+        // check for when we need to attack
+        if (attack == false)
         {
-            timeBetweenTeleports = 4f;
-            StartCoroutine(BigAttack(degreeFacing));
+            // check if we're under 2/3rds hp   
+            if (twoThirds == true)
+            {
+                //if we've used big attack, then choose another attack.
+                if (hasEverUsedBigAttack == true)
+                {
+                    if (whichAttack == true)
+                    { //just makes sure we need to pick attack
+                        StartCoroutine(ChooseAttack());
+                    }
+                }
+                else if (hasEverUsedBigAttack == false)
+                {
+                    StartCoroutine(BigAttack(degreeFacing));
+                    hasEverUsedBigAttack = true; // check if we've used big attack, and if not, make sure we do, and set that we used it
+                }
+            }
+            else if (oneThird == true)
+            {
+                //if we've used big attack, then choose another attack.
+                if (hasEverUsedBigAttack == true)
+                {
+                    if (whichAttack == true)
+                    { //just makes sure we need to pick attack
+                        StartCoroutine(ChooseAttack());
+                    }
+                }
+                else if (hasEverUsedBigAttack == false)
+                {
+                    StartCoroutine(BigAttack(degreeFacing));
+                    hasEverUsedBigAttack = true; // check if we've used big attack, and if not, make sure we do, and set that we used it
+                }
+            }
+            else
+            { //otherwise, just choose an attack if we need to.
+                if (whichAttack == true)
+                {
+                    StartCoroutine(ChooseAttack());
+                }
+            }
         }
-        else if (attack == false && oneThird == true)
-        {
-            speed = 0.5f;
-            StartCoroutine(BigAttack(degreeFacing));
-        }
-        else if (attack == false && whichAttack == true)
-        {
-            StartCoroutine(ChooseAttack());
-        }  
 
         // player location
         target = playerObj.transform;

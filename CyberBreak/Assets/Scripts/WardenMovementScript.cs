@@ -9,7 +9,9 @@ public class WardenMovementScript : MonoBehaviour
     [HideInInspector]
     GameObject playerObj;
     public GameObject bulletPrefab;
+    public GameObject bulletTrianglePrefab;
     public GameObject clonePrefab;
+    GameObject BulletTriangleObject;
     private static Rigidbody bulletRB;
     private Transform target;
     [HideInInspector]
@@ -45,6 +47,7 @@ public class WardenMovementScript : MonoBehaviour
 
     bool twoThirds;
     bool oneThird;
+    bool rotateTriangle;
     float speed;
     float timeBetweenAttacks;
     int randNum;
@@ -94,7 +97,7 @@ public class WardenMovementScript : MonoBehaviour
     [HideInInspector]
     public WardenCloneMovement cloneFour;
 
-    //Flag to check if the boss has used their big attack
+    // Flag to check if the boss has used their big attack
     bool hasEverUsedBigAttack = false;
 
     // Start is called before the first frame update
@@ -107,6 +110,7 @@ public class WardenMovementScript : MonoBehaviour
         idleWhileMoving = false;
         twoThirds = false;
         oneThird = false;
+        rotateTriangle = false;
         speed = 1f;
         timeBetweenAttacks = 2f;
         warden = GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>();
@@ -149,10 +153,11 @@ public class WardenMovementScript : MonoBehaviour
         {
             twoThirds = true;
         }
-        else if (warden.currentBossHealth <= 33)
+        else if (warden.currentBossHealth <= 33 && oneThird == false)
         {
             twoThirds = false;
             oneThird = true;
+            hasEverUsedBigAttack = false;
         }
         else if (warden.currentBossHealth <= 0)
         {
@@ -163,23 +168,50 @@ public class WardenMovementScript : MonoBehaviour
         if (attack == false)
         {               
             // check if we're under 2/3rds hp   
-            if (twoThirds == true){
+            if (twoThirds == true)
+            {
                 //if we've used big attack, then choose another attack.
-                if (hasEverUsedBigAttack == true){
-                    if (whichAttack == true){ //just makes sure we need to pick attack
+                if (hasEverUsedBigAttack == true)
+                {
+                    if (whichAttack == true)
+                    { //just makes sure we need to pick attack
                         StartCoroutine(ChooseAttack());
                     }
                 }
-                else if (hasEverUsedBigAttack == false) {
-                    StartCoroutine(BigAttack(degreeFacing));
+                else if (hasEverUsedBigAttack == false)
+                {
+                    StartCoroutine(BigAttack());
                     hasEverUsedBigAttack = true; // check if we've used big attack, and if not, make sure we do, and set that we used it
                 }
             }
-            else if (twoThirds == false){ //otherwise, just choose an attack if we need to.
-                if (whichAttack == true){
+            else if (oneThird == true)
+            {
+                //if we've used big attack, then choose another attack.
+                if (hasEverUsedBigAttack == true)
+                {
+                    if (whichAttack == true)
+                    { //just makes sure we need to pick attack
+                        StartCoroutine(ChooseAttack());
+                    }
+                }
+                else if (hasEverUsedBigAttack == false)
+                {
+                    StartCoroutine(BigAttack());
+                    hasEverUsedBigAttack = true; // check if we've used big attack, and if not, make sure we do, and set that we used it
+                }
+            }
+            else
+            { //otherwise, just choose an attack if we need to.
+                if (whichAttack == true)
+                {
                     StartCoroutine(ChooseAttack());
                 }
             }         
+        }
+
+        if (rotateTriangle == true && BulletTriangleObject != null)
+        {
+            BulletTriangleObject.transform.Rotate(0, 100 * Time.deltaTime, 0);
         }
     }
 
@@ -263,7 +295,7 @@ public class WardenMovementScript : MonoBehaviour
         }
         else
         {
-            StartCoroutine(UpDownAttack());
+            StartCoroutine(TriangleAttack());
         }
 
         // wait until any attacks have finished
@@ -356,8 +388,69 @@ public class WardenMovementScript : MonoBehaviour
         yield return null;
     }
 
-    // Creates clone to fire rows of bullets from the top and bottom of the screen
-    IEnumerator UpDownAttack()
+    // summons bullets in the shape of a triangle and spins it towards the player
+    IEnumerator TriangleAttack()
+    {
+        // move into position
+        attack = true;
+        wardenAgent.SetDestination(middleOfRoom); //set nav mesh destination to middle of room, so nav mesh isnt fighting our forced position
+        yield return new WaitUntil(() => middleCheck);
+        yield return new WaitForSeconds(1f);
+        CheckPlayerLocation();
+
+        // create first attack
+        BulletTriangleObject = Instantiate(bulletTrianglePrefab, transform.position, transform.rotation);
+        popSource.Play();
+        rotateTriangle = true;
+        yield return new WaitForSeconds(1f);
+
+        // launch attack
+        bulletRB = BulletTriangleObject.GetComponent<Rigidbody>();
+        bulletRB.AddForce(BulletTriangleObject.transform.forward * degreeFacing, ForceMode.Impulse);
+        bulletSource.Play();
+        yield return new WaitForSeconds(1.0f);
+        rotateTriangle = false;
+        Destroy(BulletTriangleObject);
+        CheckPlayerLocation();
+
+        // create second attack
+        BulletTriangleObject = Instantiate(bulletTrianglePrefab, transform.position, transform.rotation);
+        popSource.Play();
+        rotateTriangle = true;
+        yield return new WaitForSeconds(1f);
+
+        // launch attack
+        bulletRB = BulletTriangleObject.GetComponent<Rigidbody>();
+        bulletRB.AddForce(BulletTriangleObject.transform.forward * degreeFacing, ForceMode.Impulse);
+        bulletSource.Play();
+        yield return new WaitForSeconds(1.0f);
+        rotateTriangle = false;
+        Destroy(BulletTriangleObject);
+        CheckPlayerLocation();
+
+        // create third attack
+        BulletTriangleObject = Instantiate(bulletTrianglePrefab, transform.position, transform.rotation);
+        popSource.Play();
+        rotateTriangle = true;
+        yield return new WaitForSeconds(1f);
+
+        // launch attack
+        bulletRB = BulletTriangleObject.GetComponent<Rigidbody>();
+        bulletRB.AddForce(BulletTriangleObject.transform.forward * degreeFacing, ForceMode.Impulse);
+        bulletSource.Play();
+        yield return new WaitForSeconds(2.0f);
+        rotateTriangle = false;
+        Destroy(BulletTriangleObject);
+
+        //anim.SetInteger("State", 3);
+
+        attack = false;
+
+        yield return null;
+    }
+
+    // Creates clones to fire rows of bullets from the top and bottom of the screen
+    IEnumerator BigAttack()
     {
         attack = true;
 
@@ -424,32 +517,6 @@ public class WardenMovementScript : MonoBehaviour
         Destroy(cloneFourRef);
 
         //anim.SetInteger("State", 2);
-
-        // wait until attack has finished
-        yield return new WaitUntil(() => tempAttack);
-        attack = false;
-
-        yield return null;
-    }
-
-    IEnumerator BigAttack(float degreeFacing)
-    {
-        attack = true;
-        transform.position = middleOfRoom;
-        wardenAgent.SetDestination(middleOfRoom); //set nav mesh destination to middle of room, so nav mesh isnt fighting our forced position
-        //anim.SetInteger("State", 3);
-        yield return null;
-        StartCoroutine(CreateQuadOfBullets(degreeFacing, 5));
-        
-        if (oneThird == true)
-        {
-            //oneThird = false;
-        }
-        if (twoThirds == true)
-        {
-            //twoThirds = false;
-        } //this gets updated frame in update, no need to change here
-        
 
         // wait until attack has finished
         yield return new WaitUntil(() => tempAttack);

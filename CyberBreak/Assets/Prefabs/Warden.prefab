@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5965639400353514118, guid: de8a7391ed82f9f44bd0eaec37dc67ab, type: 3}
+  bulletTrianglePrefab: {fileID: 8559922428654603542, guid: bb4bddd063aac1245a973b84b413a28a, type: 3}
   clonePrefab: {fileID: 1078711843904126558, guid: e77ea22183c0c3a46829e0d617afa72a, type: 3}
   warden: {fileID: 0}
   middleOfRoom: {x: -2, y: 1.75, z: -10.5}
