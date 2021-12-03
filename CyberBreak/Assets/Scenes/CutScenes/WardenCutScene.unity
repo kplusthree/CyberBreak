@@ -827,18 +827,15 @@ MonoBehaviour:
   dialogue:
     name: Warden's Office
     sentences:
-    - "The only way I\u2019m getting out of here is if I take down the head of this
-      place, the warden.\r\n"
-    - "John Souls: \u201CLet me out of here. I\u2019m innocent.\u201D "
-    - "The Warden: \u201CFunny, John. What makes you think I\u2019ll do that?\u201D
-      \n"
+    - "John Souls: \u201CLet me out of here. I\u2019m innocent.\u201D"
+    - "The Warden: \u201CFunny, John. What makes you think I\u2019ll do that?\u201D"
     - "John Souls: \u201CYou can\u2019t jail innocents.\u201D "
     - "The Warden: \u201CYou think I care whether you\u2019re innocent or not? You
       also killed several people to get to my office, so I think you\u2019ll be staying
       here for a long time, scum.\u201D"
-    - "John Souls: \u201CEnough of this. I will bring you down, warden.\u201D\r\n"
+    - "John Souls: \u201CEnough of this. I will bring you down, warden.\u201D\r"
     - "The Warden: You underestimate me, John Souls. I will make sure you rot in
-      here for the rest of your life.\u201D\r\n"
+      here for the rest of your life.\u201D\r"
 --- !u!1 &1112892209
 GameObject:
   m_ObjectHideFlags: 0

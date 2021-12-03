@@ -42,6 +42,9 @@ EditorBuildSettings:
     path: Assets/Scenes/WardensOffice.unity
     guid: 819a525358e2da84e8bd9abd880f945a
   - enabled: 1
+    path: Assets/Scenes/CutScenes/FinalCutscene.unity
+    guid: aeca764916546334cbb21e34942160e4
+  - enabled: 1
     path: Assets/Scenes/YouWin.unity
     guid: c0cd719e86140ee4db7d7007c13d8b8b
   - enabled: 1
