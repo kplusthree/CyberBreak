@@ -431,6 +431,10 @@ PrefabInstance:
       propertyPath: bulletSource3
       value: 
       objectReference: {fileID: 569243774}
+    - target: {fileID: 5829842696614394869, guid: 985738273006123479d015477bdd172a, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 4611249451867358970, guid: 957321e24e8757949bcb83b2f898b2a5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 985738273006123479d015477bdd172a, type: 3}
 --- !u!1001 &121100447
@@ -8190,6 +8194,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 5936861340954928100, guid: 531602d3a0bd3be4c9702c53fcef2346, type: 3}
+    - target: {fileID: 2201426734797582782, guid: 19cf7cb3adbd8094e9b5220caf213b61, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3356309992738017559, guid: 19cf7cb3adbd8094e9b5220caf213b61, type: 3}
       propertyPath: healthBar
       value: 
@@ -8197,6 +8205,10 @@ PrefabInstance:
     - target: {fileID: 5453132478088153388, guid: 19cf7cb3adbd8094e9b5220caf213b61, type: 3}
       propertyPath: m_Name
       value: TutorialBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 5453132478088153388, guid: 19cf7cb3adbd8094e9b5220caf213b61, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7099541375779665173, guid: 19cf7cb3adbd8094e9b5220caf213b61, type: 3}
       propertyPath: m_LocalPosition.x
