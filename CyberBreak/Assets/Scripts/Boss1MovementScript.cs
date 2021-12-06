@@ -152,7 +152,7 @@ public class Boss1MovementScript : MonoBehaviour
         {
             anim.SetInteger("State", 0);
             // boss looks at player
-            transform.LookAt(target);
+            transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
         }
 
         // let's the boss know what quadrant the player is in
