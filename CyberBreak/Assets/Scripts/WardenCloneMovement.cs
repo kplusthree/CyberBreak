@@ -11,6 +11,8 @@ public class WardenCloneMovement : MonoBehaviour
     [HideInInspector]
     public bool attack;
     [HideInInspector]
+    public bool moving;
+    [HideInInspector]
     public bool inFirstPosition;
     public bool inSecondPosition;
 
@@ -50,6 +52,7 @@ public class WardenCloneMovement : MonoBehaviour
         degreeFacing = 0;
         speed = 1f;
         attack = false;
+        moving = false;
         tempAttack = false;
         inFirstPosition = false;
         inSecondPosition = false;
@@ -69,9 +72,17 @@ public class WardenCloneMovement : MonoBehaviour
 
         if (attack == false)
         {
-            anim.SetInteger("State", 0);
             // boss looks at player
             transform.LookAt(target);
+        }
+
+        if (moving == true)
+        {
+            anim.SetInteger("State", 1);
+        }
+        else if (attack == false)
+        {
+            anim.SetInteger("State", 0);
         }
 
         // let's the boss know what quadrant the player is in
@@ -116,6 +127,7 @@ public class WardenCloneMovement : MonoBehaviour
 
     public IEnumerator GoToPosition()
     {
+        moving = true;
         wardenAgent.SetDestination(spawnLocation);
 
         yield return null;
@@ -123,6 +135,7 @@ public class WardenCloneMovement : MonoBehaviour
 
     public IEnumerator GoToAttackPosition()
     {
+        moving = true;
         wardenAgent.SetDestination(attackLocation);
 
         yield return null;
@@ -133,7 +146,7 @@ public class WardenCloneMovement : MonoBehaviour
         attack = true;
 
         CheckPlayerLocation();
-        anim.SetInteger("State", 2);
+        anim.SetInteger("State", 3);
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 5));
 
         yield return null;

@@ -130,12 +130,15 @@ public class WardenMovementScript : MonoBehaviour
 
         if (attack == false)
         {
-            anim.SetInteger("State", 0);
             // boss looks at player
             transform.LookAt(target);
         }
 
         if (idleWhileMoving == true)
+        {
+            anim.SetInteger("State", 1);
+        }
+        else if (attack == false)
         {
             anim.SetInteger("State", 0);
         }
@@ -310,7 +313,7 @@ public class WardenMovementScript : MonoBehaviour
     IEnumerator SmallAttack()
     {
         attack = true;
-        anim.SetInteger("State", 1);
+        anim.SetInteger("State", 2);
 
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 3));
 
@@ -342,7 +345,7 @@ public class WardenMovementScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         CheckPlayerLocation();
         idleWhileMoving = false;
-        anim.SetInteger("State", 2);
+        anim.SetInteger("State", 3);
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 5));
 
         // wait until attack has finished
@@ -354,7 +357,7 @@ public class WardenMovementScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         CheckPlayerLocation();
         idleWhileMoving = false;
-        anim.SetInteger("State", 2);
+        anim.SetInteger("State", 3);
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 5));
 
         yield return new WaitUntil(() => tempAttack);
@@ -365,7 +368,7 @@ public class WardenMovementScript : MonoBehaviour
         yield return new WaitForSeconds(0.51f);
         CheckPlayerLocation();
         idleWhileMoving = false;
-        anim.SetInteger("State", 2);
+        anim.SetInteger("State", 3);
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 5));
 
         yield return new WaitUntil(() => tempAttack);
@@ -376,7 +379,7 @@ public class WardenMovementScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         CheckPlayerLocation();
         idleWhileMoving = false;
-        anim.SetInteger("State", 2);
+        anim.SetInteger("State", 3);
         StartCoroutine(CreateQuadOfBullets(degreeFacing, 5));
 
         yield return new WaitUntil(() => tempAttack);
@@ -393,8 +396,10 @@ public class WardenMovementScript : MonoBehaviour
     {
         // move into position
         attack = true;
+        idleWhileMoving = true;
         wardenAgent.SetDestination(middleOfRoom); //set nav mesh destination to middle of room, so nav mesh isnt fighting our forced position
         yield return new WaitUntil(() => middleCheck);
+        idleWhileMoving = false;
         yield return new WaitForSeconds(1f);
         CheckPlayerLocation();
 
@@ -405,6 +410,7 @@ public class WardenMovementScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         // launch attack
+        anim.SetInteger("State", 2);
         bulletRB = BulletTriangleObject.GetComponent<Rigidbody>();
         bulletRB.AddForce(BulletTriangleObject.transform.forward * degreeFacing, ForceMode.Impulse);
         bulletSource.Play();
@@ -420,6 +426,7 @@ public class WardenMovementScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         // launch attack
+        anim.SetInteger("State", 2);
         bulletRB = BulletTriangleObject.GetComponent<Rigidbody>();
         bulletRB.AddForce(BulletTriangleObject.transform.forward * degreeFacing, ForceMode.Impulse);
         bulletSource.Play();
@@ -435,14 +442,13 @@ public class WardenMovementScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         // launch attack
+        anim.SetInteger("State", 2);
         bulletRB = BulletTriangleObject.GetComponent<Rigidbody>();
         bulletRB.AddForce(BulletTriangleObject.transform.forward * degreeFacing, ForceMode.Impulse);
         bulletSource.Play();
         yield return new WaitForSeconds(2.0f);
         rotateTriangle = false;
         Destroy(BulletTriangleObject);
-
-        //anim.SetInteger("State", 3);
 
         attack = false;
 
@@ -453,9 +459,11 @@ public class WardenMovementScript : MonoBehaviour
     IEnumerator BigAttack()
     {
         attack = true;
+        idleWhileMoving = true;
 
         wardenAgent.SetDestination(cloneSummon);
         yield return new WaitUntil(() => cloneCheck);
+        idleWhileMoving = false;
         yield return new WaitForSeconds(0.5f);
 
         // summon clones
@@ -474,6 +482,7 @@ public class WardenMovementScript : MonoBehaviour
 
         // move clones to first positions
         yield return new WaitForSeconds(1f);
+        idleWhileMoving = true;
         StartCoroutine(cloneOne.GoToPosition());
         StartCoroutine(cloneTwo.GoToPosition());
         StartCoroutine(cloneThree.GoToPosition());
@@ -482,9 +491,11 @@ public class WardenMovementScript : MonoBehaviour
         yield return new WaitUntil(() => cloneTwo.inFirstPosition);
         yield return new WaitUntil(() => cloneThree.inFirstPosition);
         yield return new WaitUntil(() => cloneFour.inFirstPosition);
+        idleWhileMoving = false;
         yield return new WaitForSeconds(1f);
 
         // move to attack positions
+        idleWhileMoving = true;
         cloneOne.attackLocation = cloneOnePosTwo;
         cloneTwo.attackLocation = cloneTwoPosTwo;
         cloneThree.attackLocation = cloneThreePosTwo;
@@ -497,6 +508,7 @@ public class WardenMovementScript : MonoBehaviour
         yield return new WaitUntil(() => cloneTwo.inSecondPosition);
         yield return new WaitUntil(() => cloneThree.inSecondPosition);
         yield return new WaitUntil(() => cloneFour.inSecondPosition);
+        idleWhileMoving = false;
         yield return new WaitForSeconds(1f);
 
         // clones attack
@@ -515,8 +527,6 @@ public class WardenMovementScript : MonoBehaviour
         Destroy(cloneTwoRef);
         Destroy(cloneThreeRef);
         Destroy(cloneFourRef);
-
-        //anim.SetInteger("State", 2);
 
         // wait until attack has finished
         yield return new WaitUntil(() => tempAttack);
