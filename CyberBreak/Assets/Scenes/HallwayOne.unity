@@ -5093,6 +5093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  menu: {fileID: 1223900918}
   hallwayMusicClip: {fileID: 8300000, guid: c4def8cce9876df4b85ae538cf9b0422, type: 3}
   musicSource: {fileID: 1810179219}
 --- !u!1001 &1940180642
