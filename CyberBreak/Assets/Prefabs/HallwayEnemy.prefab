@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6de2e53d8bfad146ac61d8cf5a05fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4611249451867358970, guid: 83a617f86d92472439ccd4baebcc30c3, type: 3}
+  bulletPrefab: {fileID: 8301018506722621777, guid: 328802d1b8720b443a8523185650fdc5, type: 3}
   boss: {fileID: 0}
   rawDirection: {x: 0, y: 0, z: 0, w: 0}
   direction: {x: 0, y: 0, z: 0}
