@@ -467,6 +467,7 @@ public class WardenMovementScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         // summon clones
+        anim.SetInteger("State", 4);
         cloneOneRef = Instantiate(clonePrefab, cloneSummon, transform.rotation);
         cloneOne = cloneOneRef.GetComponent<WardenCloneMovement>();
         cloneOne.spawnLocation = cloneOnePos;
