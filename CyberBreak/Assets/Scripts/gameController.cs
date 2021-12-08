@@ -92,7 +92,7 @@ public class gameController : MonoBehaviour
             {
                 Debug.Log("you win!");
                 endLevel = true;
-                SceneManager.LoadScene("YouWin");
+                SceneManager.LoadScene("FinalCutscene");
             }
             else if (player.gameOver == true)
             {
