@@ -876,10 +876,18 @@ PrefabInstance:
       propertyPath: bulletSource
       value: 
       objectReference: {fileID: 1194570412}
+    - target: {fileID: -7324211187906234695, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5936861340954928100, guid: 531602d3a0bd3be4c9702c53fcef2346, type: 3}
     - target: {fileID: 996642160, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
       propertyPath: deathSource
       value: 
       objectReference: {fileID: 1117737146}
+    - target: {fileID: 1628903533901360791, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -332844066587614011, guid: a54ffe0546d683949bad033655ec37a3, type: 3}
     - target: {fileID: 1700399261862404995, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
       propertyPath: m_Name
       value: HallwayEnemy (2)
@@ -936,6 +944,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 5948003151605655905, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3999aaae9cdaa704797dd8cc6a70d849, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
 --- !u!4 &334350612 stripped
@@ -2523,10 +2535,26 @@ PrefabInstance:
       propertyPath: bulletSource
       value: 
       objectReference: {fileID: 1194570412}
+    - target: {fileID: -7324211187906234695, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7324211187906234695, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5936861340954928100, guid: 531602d3a0bd3be4c9702c53fcef2346, type: 3}
     - target: {fileID: 996642160, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
       propertyPath: deathSource
       value: 
       objectReference: {fileID: 1117737146}
+    - target: {fileID: 1628903533901360791, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 66bd3b26edaea8b47878ebc1998ede8c, type: 3}
+    - target: {fileID: 1628903533901360791, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1700399261862404995, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
       propertyPath: m_Name
       value: HallwayEnemy
@@ -2583,6 +2611,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 5948003151605655905, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: fba518355e20b2447b8ca933486b968a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
 --- !u!1 &913796363
@@ -2611,13 +2643,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913796363}
-  m_LocalRotation: {x: -0, y: 0.9949661, z: -0, w: 0.10021253}
+  m_LocalRotation: {x: -0, y: 0.0049157785, z: -0, w: 0.99998796}
   m_LocalPosition: {x: 0, y: 0, z: -0.15899944}
   m_LocalScale: {x: 0.29717538, y: 0.31946, z: 0.5423065}
   m_Children: []
   m_Father: {fileID: 1216831016}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 168.497, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.563, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.019099975, y: 0.13899998}
@@ -5146,13 +5178,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978143119}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: -0, y: 0.09025349, z: -0, w: 0.99591887}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.29717538, y: 0.31946, z: 0.5423065}
   m_Children: []
   m_Father: {fileID: 496127607}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 10.356, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.0060001374, y: 0.149}
@@ -5676,10 +5708,22 @@ PrefabInstance:
       propertyPath: bulletSource
       value: 
       objectReference: {fileID: 1194570412}
+    - target: {fileID: -7324211187906234695, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5936861340954928100, guid: 531602d3a0bd3be4c9702c53fcef2346, type: 3}
     - target: {fileID: 996642160, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
       propertyPath: deathSource
       value: 
       objectReference: {fileID: 1117737146}
+    - target: {fileID: 1628903533901360791, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3115223861243423524, guid: 7853f77f2e107094aa1a9946628ef310, type: 3}
+    - target: {fileID: 1628903533901360791, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1700399261862404995, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
       propertyPath: m_Name
       value: HallwayEnemy (1)
@@ -5736,6 +5780,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 5948003151605655905, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: aead993d45d793743ada1f67cb7609ec, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 560601ff9d797d3448390c67de7c1810, type: 3}
 --- !u!1 &2090824916

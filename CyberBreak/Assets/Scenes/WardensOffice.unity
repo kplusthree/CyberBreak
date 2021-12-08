@@ -2503,7 +2503,7 @@ MonoBehaviour:
   LinearWhitePoint: 11.2
   ApplyDithering: 0
   QualityLevel: 1
-  BlendAmount: 0.8
+  BlendAmount: 0.7
   LutTexture: {fileID: 2800000, guid: bb3eefaffac30f84ba7b9771ed2eb6f4, type: 3}
   LutBlendTexture: {fileID: 0}
   MaskTexture: {fileID: 0}
