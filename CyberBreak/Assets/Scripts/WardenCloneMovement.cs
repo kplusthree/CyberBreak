@@ -127,7 +127,7 @@ public class WardenCloneMovement : MonoBehaviour
 
     public IEnumerator GoToPosition()
     {
-        moving = true;
+        anim.SetInteger("State", 4);
         wardenAgent.SetDestination(spawnLocation);
 
         yield return null;
