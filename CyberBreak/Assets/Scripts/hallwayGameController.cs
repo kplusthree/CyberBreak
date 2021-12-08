@@ -11,6 +11,7 @@ public class hallwayGameController : MonoBehaviour
     public PlayerController player;
     private int currentPlayerLives;
     private int previousLivesAmount;
+    public GameObject menu;
 
     private bool setMusic;
 

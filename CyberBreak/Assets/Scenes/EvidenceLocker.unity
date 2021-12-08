@@ -2203,6 +2203,10 @@ PrefabInstance:
       propertyPath: tutorialMusicClip
       value: 
       objectReference: {fileID: 8300000, guid: c4def8cce9876df4b85ae538cf9b0422, type: 3}
+    - target: {fileID: 606078970107718714, guid: d21df0b9b2033a240ae623530c09efe4, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 408662989}
     - target: {fileID: 4869100974552347721, guid: d21df0b9b2033a240ae623530c09efe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.8444855
