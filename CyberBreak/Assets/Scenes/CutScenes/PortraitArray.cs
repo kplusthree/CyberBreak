@@ -32,7 +32,11 @@ public class PortraitArray : MonoBehaviour
         for(int i = 0; i < characterImages.Length; i++)
         {
             characterImages[i].gameObject.SetActive(false);
-            characterImages[index].gameObject.SetActive(true);
+
+            if (index < characterImages.Length)
+            {
+                characterImages[index].gameObject.SetActive(true);
+            }
         }
     }
 }
