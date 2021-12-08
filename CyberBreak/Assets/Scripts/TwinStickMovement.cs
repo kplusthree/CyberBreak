@@ -167,7 +167,11 @@ public class TwinStickMovement : MonoBehaviour
     {
         Vector3 move = new Vector3(movement.x, 0, movement.y);
 
-        if (move.x < 0)
+        if (isDashing == true)
+        {
+            anim.SetInteger("State", 4);
+        }
+        else if (move.x < 0)
         {
             facingRight = false;
             anim.SetInteger("State", 2);
