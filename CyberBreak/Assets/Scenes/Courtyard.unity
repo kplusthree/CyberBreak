@@ -1933,10 +1933,10 @@ RectTransform:
   m_Father: {fileID: 1203585053}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 328.4, y: 66}
-  m_SizeDelta: {x: 656.8048, y: 111}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0.5000305, y: 0}
+  m_SizeDelta: {x: 450.83008, y: 111}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &431905964
 MonoBehaviour:
@@ -8847,8 +8847,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -298, y: -36.6}
-  m_SizeDelta: {x: 593.9415, y: 81.78244}
+  m_AnchoredPosition: {x: -203.6, y: -34}
+  m_SizeDelta: {x: 414.05695, y: 80.40927}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1963415638
 MonoBehaviour:
@@ -8901,8 +8901,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 11
+  m_fontSizeBase: 11
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8942,7 +8942,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 10.353226, y: 4.85812, z: 0, w: -0.86668396}
+  m_margin: {x: 0.7410126, y: 4.85812, z: 0, w: -0.86668396}
   m_textInfo:
     textComponent: {fileID: 1963415638}
     characterCount: 86
@@ -8950,7 +8950,7 @@ MonoBehaviour:
     spaceCount: 18
     wordCount: 18
     linkCount: 0
-    lineCount: 3
+    lineCount: 4
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
