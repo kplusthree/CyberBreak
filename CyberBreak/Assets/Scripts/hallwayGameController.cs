@@ -4,14 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class hallwayGameController : MonoBehaviour
+public class hallwayGameController : BaseGameController
 {
     private bool endLevel;
     [HideInInspector]
     public PlayerController player;
     private int currentPlayerLives;
     private int previousLivesAmount;
-    public GameObject menu;
 
     private bool setMusic;
 

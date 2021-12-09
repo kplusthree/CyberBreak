@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class gameController : MonoBehaviour
+public class gameController : BaseGameController
 {
     Scene scene;
 
@@ -13,7 +13,6 @@ public class gameController : MonoBehaviour
     public PlayerController player;
     private int currentPlayerLives;
     private int previousLivesAmount;
-    public GameObject menu;
 
     [HideInInspector]
     public BossController boss;

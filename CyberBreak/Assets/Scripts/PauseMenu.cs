@@ -9,20 +9,18 @@ public class PauseMenu : MonoBehaviour
     [HideInInspector]
     public TwinStickMovement pause;
     public GameObject menu;
-    public gameController controller;
+    public BaseGameController controller;
 
     void Start()
     {
-        pause = GameObject.FindGameObjectWithTag("Player").GetComponent<TwinStickMovement>();
-        pause.pause = true;
-        controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<gameController>();
-        menu = controller.menu;
-        menu.SetActive(false);
+        Reconfigure();
+        SetMenuActiveStatus(false);
     }
 
     public void ResumeGame()
     {
-      menu.SetActive(true);
+      Reconfigure();
+      SetMenuActiveStatus(true);
       pause.pause = false;
       pause.paused = false;
       SceneManager.UnloadSceneAsync("PauseMenu");
@@ -31,5 +29,32 @@ public class PauseMenu : MonoBehaviour
     public void ReturnMenu()
     {
       SceneManager.LoadScene("MainMenu");
+    }
+
+    private void Reconfigure()
+    {
+        pause = GameObject.FindGameObjectWithTag("Player").GetComponent<TwinStickMovement>();
+        pause.pause = true;
+        try
+        {
+            controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<BaseGameController>();
+            menu = controller.menu;
+        } catch(System.NullReferenceException ex)
+        {
+            Debug.LogWarning("No Game Controller in scene");
+        }
+    }
+
+    public void SetMenuActiveStatus(bool status)
+    {
+        if(menu != null)
+        {
+            menu.SetActive(status);
+        }
+
+        else
+        {
+            Debug.LogWarning("Menu is null pause can't change menu status");
+        }
     }
 }

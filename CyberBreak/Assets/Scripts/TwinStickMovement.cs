@@ -70,11 +70,13 @@ public class TwinStickMovement : MonoBehaviour
     private void OnEnable()
     {
         playerControls.Enable();
+        playerControls.Controls.Pause.performed += ctx => HandlePause();
     }
 
     private void OnDisable()
     {
         playerControls.Disable();
+        playerControls.Controls.Pause.performed -= ctx => HandlePause();
     }
 
     void Update()
@@ -89,8 +91,6 @@ public class TwinStickMovement : MonoBehaviour
     {
         movement = playerControls.Controls.Movement.ReadValue<Vector2>();
         aim = playerControls.Controls.Aim.ReadValue<Vector2>();
-
-        playerControls.Controls.Pause.performed += ctx => HandlePause();
 
         if (pause == true)
         {
