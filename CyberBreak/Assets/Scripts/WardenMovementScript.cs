@@ -150,13 +150,14 @@ public class WardenMovementScript : MonoBehaviour
 
         // checks if boss is in the right spot
         CheckBossPosition();
-
+        int oneThirdsHP = Mathf.CeilToInt(warden.startingBossHealth * 0.33f);
+        int twoThirdsHP = Mathf.CeilToInt(warden.startingBossHealth * 0.66f); 
         // check boss health for change in attacks
-        if (warden.currentBossHealth <= 66 && warden.currentBossHealth > 33)
+        if (warden.currentBossHealth <= twoThirdsHP && warden.currentBossHealth > oneThirdsHP)
         {
             twoThirds = true;
         }
-        else if (warden.currentBossHealth <= 33 && oneThird == false)
+        else if (warden.currentBossHealth <= oneThirdsHP && oneThird == false)
         {
             twoThirds = false;
             oneThird = true;

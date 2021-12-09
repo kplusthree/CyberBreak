@@ -6,8 +6,8 @@ public class BossController : MonoBehaviour
 {
     [HideInInspector]
     public int health;
-    [HideInInspector]
-    public int maxHealth = 100;
+    //[HideInInspector]
+    public int maxHealth = 200;
     public bool gameWin;
 
     public HealthBar healthBar;

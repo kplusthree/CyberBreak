@@ -77,15 +77,16 @@ public class Boss1MovementScript : MonoBehaviour
         popSource.clip = popClip;
         anim = GetComponent<Animator>();
     }
-
     // Update is called once per frame
     void Update()
     {
-        if (boss.currentBossHealth <= 66 && boss.currentBossHealth > 33)
+        int oneThirdsHP = Mathf.CeilToInt(boss.startingBossHealth * 0.4f);
+        int twoThirdsHP = Mathf.CeilToInt(boss.startingBossHealth * 0.6f);
+        if (boss.currentBossHealth <= twoThirdsHP && boss.currentBossHealth > oneThirdsHP)
         {
             twoThirds = true;
         }
-        else if (boss.currentBossHealth <= 33)
+        else if (boss.currentBossHealth <= oneThirdsHP)
         {
             twoThirds = false;
             oneThird = true;
@@ -204,7 +205,7 @@ public class Boss1MovementScript : MonoBehaviour
         whichAttack = false;
 
         // create random number between 1 and 3
-        randNum = Random.Range(1, 3);
+        randNum = Random.Range(1, 4);
 
         // don't teleport until time has passed
         yield return new WaitForSeconds(timeBetweenAttacks * speed);

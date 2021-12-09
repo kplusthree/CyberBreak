@@ -1558,7 +1558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -943896151558028692, guid: 6a4c14da16f78264fa5bc476705ed52b, type: 3}
       propertyPath: pointThree.y
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -943896151558028692, guid: 6a4c14da16f78264fa5bc476705ed52b, type: 3}
       propertyPath: middleOfRoom.z
@@ -1663,6 +1663,10 @@ PrefabInstance:
     - target: {fileID: 3965207340773096929, guid: 6a4c14da16f78264fa5bc476705ed52b, type: 3}
       propertyPath: floatingText
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3965207340773096929, guid: 6a4c14da16f78264fa5bc476705ed52b, type: 3}
+      propertyPath: maxHealth
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4692728204060148056, guid: 6a4c14da16f78264fa5bc476705ed52b, type: 3}
       propertyPath: m_FlipX

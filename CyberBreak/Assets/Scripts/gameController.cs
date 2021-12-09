@@ -18,6 +18,7 @@ public class gameController : BaseGameController
     public BossController boss;
     [HideInInspector]
     public int currentBossHealth;
+    public int startingBossHealth;
     private int previousHealthAmount;
     private bool setMusic;
 
@@ -36,6 +37,7 @@ public class gameController : BaseGameController
         previousLivesAmount = currentPlayerLives;
         currentBossHealth = boss.health;
         previousHealthAmount = currentBossHealth;
+        startingBossHealth = boss.health;
         endLevel = false;
         setMusic = false;
     }
@@ -59,7 +61,6 @@ public class gameController : BaseGameController
             }
 
             musicSource.Play();
-
             setMusic = true;
         }
 
